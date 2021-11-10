@@ -1,0 +1,732 @@
+fileFormatVersion: 2
+guid: a871a2ea3252f43478db652dc79ae9c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9218679570929130056
+    second: GasRing_0
+  - first:
+      213: 9189790111620546520
+    second: GasRing_1
+  - first:
+      213: 6832936644414253680
+    second: GasRing_2
+  - first:
+      213: 6299852618471346986
+    second: GasRing_3
+  - first:
+      213: 6228415527657889908
+    second: GasRing_4
+  - first:
+      213: -155581454719273332
+    second: GasRing_5
+  - first:
+      213: 657079547087659699
+    second: GasRing_6
+  - first:
+      213: -4569024284761242126
+    second: GasRing_7
+  - first:
+      213: 7364142196709482643
+    second: GasRing_8
+  - first:
+      213: -815520160314252203
+    second: GasRing_9
+  - first:
+      213: -2061614056329018295
+    second: GasRing_10
+  - first:
+      213: 6620207707044814233
+    second: GasRing_11
+  - first:
+      213: 4880497940544492959
+    second: GasRing_12
+  - first:
+      213: -6410314279151317912
+    second: GasRing_13
+  - first:
+      213: -4680734517475069169
+    second: GasRing_14
+  - first:
+      213: 171433428792400788
+    second: GasRing_15
+  - first:
+      213: -8680725198654107422
+    second: GasRing_16
+  - first:
+      213: 6412089676842113274
+    second: GasRing_17
+  - first:
+      213: 4261704031397233037
+    second: GasRing_18
+  - first:
+      213: 6442469635328307381
+    second: GasRing_19
+  - first:
+      213: 6568498946593808213
+    second: GasRing_20
+  - first:
+      213: -8004447075874305276
+    second: GasRing_21
+  - first:
+      213: -4236165545976863827
+    second: GasRing_22
+  - first:
+      213: -1307570331682274860
+    second: GasRing_23
+  - first:
+      213: -8576436551870787044
+    second: GasRing_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GasRing_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 53
+        width: 223
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b56e9cd5cba01080800000000000000
+      internalID: -9218679570929130056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_1
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 53
+        width: 227
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df3a8bba61b88f70800000000000000
+      internalID: 9189790111620546520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_2
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 53
+        width: 223
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07aaf07fca773de50800000000000000
+      internalID: 6832936644414253680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_3
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 53
+        width: 225
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a239c4514929d6750800000000000000
+      internalID: 6299852618471346986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_4
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 53
+        width: 227
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470639f3ce6cf6650800000000000000
+      internalID: 6228415527657889908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_5
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 53
+        width: 223
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86b1d1cd7347ddf0800000000000000
+      internalID: -155581454719273332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_6
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 53
+        width: 220
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2a551ed5a6e1900800000000000000
+      internalID: 657079547087659699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_7
+      rect:
+        serializedVersion: 2
+        x: 2137
+        y: 54
+        width: 227
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f54ca8ee909790c0800000000000000
+      internalID: -4569024284761242126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_8
+      rect:
+        serializedVersion: 2
+        x: 2437
+        y: 53
+        width: 227
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390655e9f40b23660800000000000000
+      internalID: 7364142196709482643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_9
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 53
+        width: 224
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554ac492cb0bea4f0800000000000000
+      internalID: -815520160314252203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_10
+      rect:
+        serializedVersion: 2
+        x: 3035
+        y: 53
+        width: 226
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9448e8c40fca363e0800000000000000
+      internalID: -2061614056329018295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_11
+      rect:
+        serializedVersion: 2
+        x: 3338
+        y: 50
+        width: 226
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d95bd85d3bfdb50800000000000000
+      internalID: 6620207707044814233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_12
+      rect:
+        serializedVersion: 2
+        x: 3638
+        y: 53
+        width: 224
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f951e29d4030bb340800000000000000
+      internalID: 4880497940544492959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_13
+      rect:
+        serializedVersion: 2
+        x: 3939
+        y: 53
+        width: 223
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c429c502df907a0800000000000000
+      internalID: -6410314279151317912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_14
+      rect:
+        serializedVersion: 2
+        x: 4235
+        y: 53
+        width: 227
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f033df581c0ba0fb0800000000000000
+      internalID: -4680734517475069169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_15
+      rect:
+        serializedVersion: 2
+        x: 4539
+        y: 53
+        width: 224
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b5cc19bcd016200800000000000000
+      internalID: 171433428792400788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_16
+      rect:
+        serializedVersion: 2
+        x: 4840
+        y: 53
+        width: 223
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0907d9c6ed78780800000000000000
+      internalID: -8680725198654107422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_17
+      rect:
+        serializedVersion: 2
+        x: 5140
+        y: 53
+        width: 223
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af89f10a6915cf850800000000000000
+      internalID: 6412089676842113274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_18
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 53
+        width: 221
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d814841bc3d942b30800000000000000
+      internalID: 4261704031397233037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_19
+      rect:
+        serializedVersion: 2
+        x: 5740
+        y: 54
+        width: 220
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0fbf9efff386950800000000000000
+      internalID: 6442469635328307381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_20
+      rect:
+        serializedVersion: 2
+        x: 6037
+        y: 53
+        width: 227
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f50439dfef72b50800000000000000
+      internalID: 6568498946593808213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_21
+      rect:
+        serializedVersion: 2
+        x: 6337
+        y: 53
+        width: 227
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b091b3bcd7ae090800000000000000
+      internalID: -8004447075874305276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_22
+      rect:
+        serializedVersion: 2
+        x: 6639
+        y: 53
+        width: 226
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3ec4e41ed1635c0800000000000000
+      internalID: -4236165545976863827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_23
+      rect:
+        serializedVersion: 2
+        x: 6938
+        y: 53
+        width: 227
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d10d3d06b39adde0800000000000000
+      internalID: -1307570331682274860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GasRing_24
+      rect:
+        serializedVersion: 2
+        x: 7238
+        y: 53
+        width: 224
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12d01f55606af880800000000000000
+      internalID: -8576436551870787044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
