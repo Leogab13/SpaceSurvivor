@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movimentoNave : MonoBehaviour
+public class moveShip : MonoBehaviour
 {
     Rigidbody2D rb;              //corpo nave
     public float speed = 100;    //velocità nave
