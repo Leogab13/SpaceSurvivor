@@ -143,7 +143,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -155,7 +155,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -167,7 +167,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -179,7 +179,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -193,10 +193,10 @@ TextureImporter:
       name: GasRing_0
       rect:
         serializedVersion: 2
-        x: 39
-        y: 53
-        width: 223
-        height: 194
+        x: 0
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: GasRing_1
       rect:
         serializedVersion: 2
-        x: 339
-        y: 53
-        width: 227
-        height: 194
+        x: 300
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +235,10 @@ TextureImporter:
       name: GasRing_2
       rect:
         serializedVersion: 2
-        x: 639
-        y: 53
-        width: 223
-        height: 194
+        x: 600
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: GasRing_3
       rect:
         serializedVersion: 2
-        x: 938
-        y: 53
-        width: 225
-        height: 194
+        x: 900
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +277,10 @@ TextureImporter:
       name: GasRing_4
       rect:
         serializedVersion: 2
-        x: 1236
-        y: 53
-        width: 227
-        height: 190
+        x: 1200
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +298,10 @@ TextureImporter:
       name: GasRing_5
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 53
-        width: 223
-        height: 194
+        x: 1500
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +319,10 @@ TextureImporter:
       name: GasRing_6
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 53
-        width: 220
-        height: 190
+        x: 1800
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +340,10 @@ TextureImporter:
       name: GasRing_7
       rect:
         serializedVersion: 2
-        x: 2137
-        y: 54
-        width: 227
-        height: 189
+        x: 2100
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,10 +361,10 @@ TextureImporter:
       name: GasRing_8
       rect:
         serializedVersion: 2
-        x: 2437
-        y: 53
-        width: 227
-        height: 190
+        x: 2400
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,10 +382,10 @@ TextureImporter:
       name: GasRing_9
       rect:
         serializedVersion: 2
-        x: 2737
-        y: 53
-        width: 224
-        height: 194
+        x: 2700
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +403,10 @@ TextureImporter:
       name: GasRing_10
       rect:
         serializedVersion: 2
-        x: 3035
-        y: 53
-        width: 226
-        height: 194
+        x: 3000
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,10 +424,10 @@ TextureImporter:
       name: GasRing_11
       rect:
         serializedVersion: 2
-        x: 3338
-        y: 50
-        width: 226
-        height: 193
+        x: 3300
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,10 +445,10 @@ TextureImporter:
       name: GasRing_12
       rect:
         serializedVersion: 2
-        x: 3638
-        y: 53
-        width: 224
-        height: 194
+        x: 3600
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,10 +466,10 @@ TextureImporter:
       name: GasRing_13
       rect:
         serializedVersion: 2
-        x: 3939
-        y: 53
-        width: 223
-        height: 194
+        x: 3900
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -487,10 +487,10 @@ TextureImporter:
       name: GasRing_14
       rect:
         serializedVersion: 2
-        x: 4235
-        y: 53
-        width: 227
-        height: 190
+        x: 4200
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -508,10 +508,10 @@ TextureImporter:
       name: GasRing_15
       rect:
         serializedVersion: 2
-        x: 4539
-        y: 53
-        width: 224
-        height: 190
+        x: 4500
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -529,10 +529,10 @@ TextureImporter:
       name: GasRing_16
       rect:
         serializedVersion: 2
-        x: 4840
-        y: 53
-        width: 223
-        height: 194
+        x: 4800
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -550,10 +550,10 @@ TextureImporter:
       name: GasRing_17
       rect:
         serializedVersion: 2
-        x: 5140
-        y: 53
-        width: 223
-        height: 193
+        x: 5100
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -571,10 +571,10 @@ TextureImporter:
       name: GasRing_18
       rect:
         serializedVersion: 2
-        x: 5440
-        y: 53
-        width: 221
-        height: 194
+        x: 5400
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -592,10 +592,10 @@ TextureImporter:
       name: GasRing_19
       rect:
         serializedVersion: 2
-        x: 5740
-        y: 54
-        width: 220
-        height: 191
+        x: 5700
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -613,10 +613,10 @@ TextureImporter:
       name: GasRing_20
       rect:
         serializedVersion: 2
-        x: 6037
-        y: 53
-        width: 227
-        height: 190
+        x: 6000
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -634,10 +634,10 @@ TextureImporter:
       name: GasRing_21
       rect:
         serializedVersion: 2
-        x: 6337
-        y: 53
-        width: 227
-        height: 194
+        x: 6300
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -655,10 +655,10 @@ TextureImporter:
       name: GasRing_22
       rect:
         serializedVersion: 2
-        x: 6639
-        y: 53
-        width: 226
-        height: 194
+        x: 6600
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -676,10 +676,10 @@ TextureImporter:
       name: GasRing_23
       rect:
         serializedVersion: 2
-        x: 6938
-        y: 53
-        width: 227
-        height: 194
+        x: 6900
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -697,10 +697,10 @@ TextureImporter:
       name: GasRing_24
       rect:
         serializedVersion: 2
-        x: 7238
-        y: 53
-        width: 224
-        height: 194
+        x: 7200
+        y: 0
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
