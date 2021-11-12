@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movePlanet : MonoBehaviour
+public class movePlanets : MonoBehaviour
 {
     public float velocita = 0.2f;
 
