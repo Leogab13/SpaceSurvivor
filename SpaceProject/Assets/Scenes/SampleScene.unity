@@ -215,6 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 27879593}
   - component: {fileID: 27879592}
+  - component: {fileID: 27879594}
   m_Layer: 0
   m_Name: Space BackgroundPlanets (1)
   m_TagString: Untagged
@@ -287,6 +288,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &27879594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27879591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f60d2a8129888c4782d4aba8ba9b6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocita: 0.02
 --- !u!1 &180467750
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1317bb7a669964f8b182b819828412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   speed: 100
 --- !u!1 &519420028
 GameObject:
@@ -540,6 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 725620633}
   - component: {fileID: 725620632}
+  - component: {fileID: 725620634}
   m_Layer: 0
   m_Name: Space BackgroundPlanets
   m_TagString: Untagged
@@ -612,6 +626,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &725620634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725620631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f60d2a8129888c4782d4aba8ba9b6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocita: 0.02
 --- !u!1 &745139863
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 745139865}
   - component: {fileID: 745139864}
+  - component: {fileID: 745139866}
   m_Layer: 0
   m_Name: Space BackgroundNebulae (1)
   m_TagString: Untagged
@@ -694,6 +722,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &745139866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745139863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af01872f0af897f40a5937f3ab2060c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocita: 0.32
 --- !u!1001 &1072963851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -846,7 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adf92ebd6475064892c9b60dc5587e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.5
+  velocita: 0.015
 --- !u!1 &1166979951
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,7 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adf92ebd6475064892c9b60dc5587e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.5
+  velocita: 0.015
 --- !u!1 &1425489550
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425489552}
   - component: {fileID: 1425489551}
+  - component: {fileID: 1425489553}
   m_Layer: 0
   m_Name: Space BackgroundNebulae
   m_TagString: Untagged
@@ -1025,3 +1067,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425489553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425489550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af01872f0af897f40a5937f3ab2060c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocita: 0.32
+--- !u!1 &1696490350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3249299583531984693, guid: 65e2cb6fd43132c45acb58663fbc8245, type: 3}
+  m_PrefabInstance: {fileID: 1072963851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1696490351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696490350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f60d2a8129888c4782d4aba8ba9b6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocita: 0.02

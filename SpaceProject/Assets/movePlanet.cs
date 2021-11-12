@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveStars : MonoBehaviour
+public class movePlanet : MonoBehaviour
 {
-    public float velocita =0.03f ;
+    public float velocita = 0.2f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
