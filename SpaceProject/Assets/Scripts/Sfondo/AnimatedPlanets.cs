@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveStars : MonoBehaviour
+public class AnimatedPlanets : MonoBehaviour
 {
-    public float velocita =0.01f ;
+    public float velocita = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,13 +15,13 @@ public class MoveStars : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (transform.position.y > -12.8f)
+        if (transform.position.y > -5.0f)
         {
             transform.position = new Vector2(transform.position.x, transform.position.y - (velocita * Time.deltaTime));
         }
         else
         {
-            transform.position = new Vector2(0f, 25.6f);
+            Destroy(gameObject);
         }
     }
 }

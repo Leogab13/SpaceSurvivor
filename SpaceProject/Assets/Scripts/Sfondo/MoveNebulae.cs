@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveNebulae : MonoBehaviour
 {
-    public float velocita = 0.28f;
+    public float velocita = 0.06f;
 
     // Start is called before the first frame update
     void Start()
