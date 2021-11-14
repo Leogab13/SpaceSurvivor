@@ -34,7 +34,7 @@ public class moveShip : MonoBehaviour
     void Update()        
     {
         asseX = Input.GetAxisRaw("Horizontal");  //leggo l'input
-        if(!Mathf.Approximately(asseX, 0.0f))
+        if(Mathf.Approximately(asseX, 0.0f))
         {
             animator.SetBool("Stopped", true);
         }
