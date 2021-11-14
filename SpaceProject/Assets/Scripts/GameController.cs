@@ -8,16 +8,20 @@ public class GameController : MonoBehaviour
     private float timer;
     private float timeToSpawn = 0.0f;
     private int planetsIndex = 0;
+    public float GameTime;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = timeToSpawn;
+        GameTime = 0.0f;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        GameTime += Time.deltaTime;
+
         if (timer > 0.0f)
         {
             timer -= Time.deltaTime;

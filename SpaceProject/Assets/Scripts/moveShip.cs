@@ -33,7 +33,16 @@ public class moveShip : MonoBehaviour
     // Update is called once per frame
     void Update()        
     {
-        asseX = Input.GetAxisRaw("Horizontal"); //leggo l'input        
+        asseX = Input.GetAxisRaw("Horizontal");  //leggo l'input
+        if(!Mathf.Approximately(asseX, 0.0f))
+        {
+            animator.SetBool("Stopped", true);
+        }
+        else
+        {
+            animator.SetBool("Stopped", false);
+        }
+        animator.SetFloat("MoveX", asseX);
     }
 
 
