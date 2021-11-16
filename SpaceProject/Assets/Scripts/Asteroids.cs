@@ -14,16 +14,9 @@ public class Asteroids : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (transform.position.y > -10.0f)
-        {
-            transform.position = new Vector2(transform.position.x, transform.position.y - (velocita * Time.deltaTime));
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
