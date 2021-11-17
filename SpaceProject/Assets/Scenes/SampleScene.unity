@@ -300,7 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f60d2a8129888c4782d4aba8ba9b6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.2
 --- !u!1 &180467750
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f60d2a8129888c4782d4aba8ba9b6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.2
 --- !u!1 &888386631
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,8 +750,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroids:
-  - {fileID: 4330078808853593787, guid: 7acba12c474b8f04488c41bf6ec6a384, type: 3}
-  - {fileID: 6329405988683994920, guid: 0a303d9bbc4e6f5439b1737c0caf8a01, type: 3}
+  - {fileID: 5529185804798042654, guid: ae638e96240684b45bb71b88209ec6df, type: 3}
+  - {fileID: 5529185804798042654, guid: ae638e96240684b45bb71b88209ec6df, type: 3}
+  - {fileID: 5529185804798042654, guid: ae638e96240684b45bb71b88209ec6df, type: 3}
   planets:
   - {fileID: 4295887886849479704, guid: edd4ae987c6aa4c4d82a0c6882d1a036, type: 3}
   - {fileID: 3249299583531984693, guid: 65e2cb6fd43132c45acb58663fbc8245, type: 3}
@@ -774,7 +773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888386631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2079499, y: 0.20377174, z: -19.69017}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1002,7 +1001,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adf92ebd6475064892c9b60dc5587e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.01
 --- !u!1 &1166979951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adf92ebd6475064892c9b60dc5587e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.01
 --- !u!1 &1243387728
 GameObject:
   m_ObjectHideFlags: 0
