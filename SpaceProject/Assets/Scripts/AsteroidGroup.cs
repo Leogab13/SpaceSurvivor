@@ -14,7 +14,7 @@ public class AsteroidGroup : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (transform.position.y > -10.0f)
+        if (transform.position.y > -20.0f)
         {
             transform.position = new Vector2(transform.position.x, transform.position.y - (velocita * Time.deltaTime));
         }
