@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 180467754}
   - component: {fileID: 180467755}
   - component: {fileID: 180467756}
+  - component: {fileID: 180467757}
   m_Layer: 0
   m_Name: myShip
   m_TagString: Untagged
@@ -455,6 +456,18 @@ CircleCollider2D:
   m_Offset: {x: -0.00078447664, y: -0.008594523}
   serializedVersion: 2
   m_Radius: 0.090533584
+--- !u!114 &180467757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180467750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178294912a4e90243a236cc50551c149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,9 +763,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroids:
-  - {fileID: 5529185804798042654, guid: ae638e96240684b45bb71b88209ec6df, type: 3}
-  - {fileID: 5529185804798042654, guid: ae638e96240684b45bb71b88209ec6df, type: 3}
-  - {fileID: 5529185804798042654, guid: ae638e96240684b45bb71b88209ec6df, type: 3}
+  - {fileID: 5568445447221843905, guid: 27426a2183c574540854d4e91760879c, type: 3}
+  - {fileID: 5568445447221843905, guid: 27426a2183c574540854d4e91760879c, type: 3}
+  - {fileID: 5568445447221843905, guid: 27426a2183c574540854d4e91760879c, type: 3}
   planets:
   - {fileID: 4295887886849479704, guid: edd4ae987c6aa4c4d82a0c6882d1a036, type: 3}
   - {fileID: 3249299583531984693, guid: 65e2cb6fd43132c45acb58663fbc8245, type: 3}
