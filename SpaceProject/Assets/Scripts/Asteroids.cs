@@ -22,6 +22,6 @@ public class Asteroids : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Instantiate(explosion, other.transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
