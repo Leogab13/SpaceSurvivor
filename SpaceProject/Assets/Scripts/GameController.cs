@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject[] asteroids;
     private float asteroidTimer;
-    private float asteroidTimeToSpawn = 20.0f;
+    private float asteroidTimeToSpawn = 15.0f;
 
     public GameObject[] planets;
     private float planetTimer;
@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            var position = new Vector2(0.0f, 5.0f);
+            var position = new Vector2(0.0f, 6.4f);
             Instantiate(asteroids[Random.Range(0, asteroids.Length)], position, Quaternion.identity);
             asteroidTimer = asteroidTimeToSpawn;
         }
