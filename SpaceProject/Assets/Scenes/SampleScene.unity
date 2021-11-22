@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f60d2a8129888c4782d4aba8ba9b6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocita: 0.2
 --- !u!1 &180467750
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,9 +313,8 @@ GameObject:
   - component: {fileID: 180467752}
   - component: {fileID: 180467751}
   - component: {fileID: 180467754}
-  - component: {fileID: 180467755}
   - component: {fileID: 180467756}
-  - component: {fileID: 180467757}
+  - component: {fileID: 180467755}
   m_Layer: 0
   m_Name: myShip
   m_TagString: Untagged
@@ -436,10 +436,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 180467750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1317bb7a669964f8b182b819828412, type: 3}
+  m_Script: {fileID: 11500000, guid: 53766ec51a147a643b00021d6768bd7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  explosion: {fileID: 9078237684683626750, guid: 49d1881f386ceb048bfbb9fe8f4e04b4, type: 3}
 --- !u!58 &180467756
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -456,18 +457,6 @@ CircleCollider2D:
   m_Offset: {x: -0.00078447664, y: -0.008594523}
   serializedVersion: 2
   m_Radius: 0.090533584
---- !u!114 &180467757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180467750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 178294912a4e90243a236cc50551c149, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f60d2a8129888c4782d4aba8ba9b6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocita: 0.2
 --- !u!1 &888386631
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,8 +754,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroids:
   - {fileID: 5568445447221843905, guid: 27426a2183c574540854d4e91760879c, type: 3}
-  - {fileID: 5568445447221843905, guid: 27426a2183c574540854d4e91760879c, type: 3}
-  - {fileID: 5568445447221843905, guid: 27426a2183c574540854d4e91760879c, type: 3}
+  - {fileID: 5540968379430772738, guid: 3bc9ae27cdf4a6346be34cb76eeecfb6, type: 3}
+  - {fileID: 5540968379430772738, guid: 3bc9ae27cdf4a6346be34cb76eeecfb6, type: 3}
   planets:
   - {fileID: 4295887886849479704, guid: edd4ae987c6aa4c4d82a0c6882d1a036, type: 3}
   - {fileID: 3249299583531984693, guid: 65e2cb6fd43132c45acb58663fbc8245, type: 3}
@@ -775,7 +765,7 @@ MonoBehaviour:
   - {fileID: 4984535033046767585, guid: 2e7556688e89e3646aec04f982cb1a43, type: 3}
   - {fileID: 6355609519719197371, guid: 9f6fee828aca50e47a3ac6ebaf4f6f11, type: 3}
   - {fileID: 1512387894584942703, guid: 935d56cc601b7df449423a3815d54be6, type: 3}
-  - {fileID: 2399813144803668379, guid: 08536e478652b0b43ad55d12b65d4825, type: 3}
+  - {fileID: 1667566195352970459, guid: 08536e478652b0b43ad55d12b65d4825, type: 3}
   - {fileID: 3816282107766219095, guid: a3086809516e1f84b89b7612694ec210, type: 3}
   GameTime: 0
 --- !u!4 &888386633
@@ -1014,6 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adf92ebd6475064892c9b60dc5587e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocita: 0.01
 --- !u!1 &1166979951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adf92ebd6475064892c9b60dc5587e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocita: 0.01
 --- !u!1 &1243387728
 GameObject:
   m_ObjectHideFlags: 0

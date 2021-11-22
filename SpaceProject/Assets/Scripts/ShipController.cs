@@ -8,6 +8,7 @@ public class ShipController : MonoBehaviour
     public float speed = 3.0f;    //velocità nave
     Animator animator;
     float asseX;
+    public GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,11 @@ public class ShipController : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             punteggio.score = punteggio.score + 2000;
+        }
+        if (collision.name.Contains("Asteroid"))
+        {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            collision.gameObject.SetActive(false);
         }
 
     }
