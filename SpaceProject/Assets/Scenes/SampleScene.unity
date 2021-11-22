@@ -313,8 +313,8 @@ GameObject:
   - component: {fileID: 180467752}
   - component: {fileID: 180467751}
   - component: {fileID: 180467754}
-  - component: {fileID: 180467756}
   - component: {fileID: 180467755}
+  - component: {fileID: 180467756}
   m_Layer: 0
   m_Name: myShip
   m_TagString: Untagged
@@ -441,8 +441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   explosion: {fileID: 9078237684683626750, guid: 49d1881f386ceb048bfbb9fe8f4e04b4, type: 3}
---- !u!58 &180467756
-CircleCollider2D:
+--- !u!60 &180467756
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -454,9 +454,34 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00078447664, y: -0.008594523}
-  serializedVersion: 2
-  m_Radius: 0.090533584
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.6666667}
+    oldSize: {x: 0.16, y: 0.24}
+    newSize: {x: 0.16, y: 0.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.039601207, y: 0.0700439}
+      - {x: 0.019845663, y: 0.08034223}
+      - {x: -0.02006198, y: 0.08010667}
+      - {x: -0.040344607, y: 0.070273235}
+      - {x: -0.06042807, y: 0.05019404}
+      - {x: -0.070382625, y: 0.030179676}
+      - {x: -0.0801562, y: 0.020041717}
+      - {x: -0.08006276, y: -0.059782967}
+      - {x: -0.07014187, y: -0.07011831}
+      - {x: -0.030121576, y: -0.08006771}
+      - {x: 0.030191682, y: -0.080008335}
+      - {x: 0.07045843, y: -0.069777556}
+      - {x: 0.08053039, y: -0.059833102}
+      - {x: 0.07973514, y: 0.019768095}
+      - {x: 0.07012431, y: 0.030101156}
+      - {x: 0.059947833, y: 0.0497721}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,9 +778,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroids:
+  - {fileID: 8254395492756316404, guid: 222014f3e6913de488a7bb1a7fafb6c3, type: 3}
+  - {fileID: 509300704867262325, guid: 4c2441ed73f43a64490f06bea2cdc03e, type: 3}
   - {fileID: 5568445447221843905, guid: 27426a2183c574540854d4e91760879c, type: 3}
-  - {fileID: 5540968379430772738, guid: 3bc9ae27cdf4a6346be34cb76eeecfb6, type: 3}
-  - {fileID: 5540968379430772738, guid: 3bc9ae27cdf4a6346be34cb76eeecfb6, type: 3}
   planets:
   - {fileID: 4295887886849479704, guid: edd4ae987c6aa4c4d82a0c6882d1a036, type: 3}
   - {fileID: 3249299583531984693, guid: 65e2cb6fd43132c45acb58663fbc8245, type: 3}

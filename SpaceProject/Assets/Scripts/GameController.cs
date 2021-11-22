@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject[] asteroids;
     private float asteroidTimer;
-    private float asteroidTimeToSpawn = 15.0f;
+    private float asteroidTimeToSpawn = 14.0f;
 
     public GameObject[] planets;
     private float planetTimer;
