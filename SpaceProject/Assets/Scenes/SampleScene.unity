@@ -300,7 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f60d2a8129888c4782d4aba8ba9b6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.2
 --- !u!1 &180467750
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53766ec51a147a643b00021d6768bd7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingSpeed: 3
   speed: 3
   explosion: {fileID: 9078237684683626750, guid: 49d1881f386ceb048bfbb9fe8f4e04b4, type: 3}
 --- !u!60 &180467756
@@ -747,7 +747,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f60d2a8129888c4782d4aba8ba9b6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.2
 --- !u!1 &888386631
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,10 +777,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroids:
-  - {fileID: 8254395492756316404, guid: 222014f3e6913de488a7bb1a7fafb6c3, type: 3}
-  - {fileID: 509300704867262325, guid: 4c2441ed73f43a64490f06bea2cdc03e, type: 3}
-  - {fileID: 1088172884421268788, guid: e2f8448c16ca59a408fde14278f4c4a5, type: 3}
-  - {fileID: 5568445447221843905, guid: 27426a2183c574540854d4e91760879c, type: 3}
+  - {fileID: 2613205638126841930, guid: 2580371abbb06b347bf46341f0653121, type: 3}
+  - {fileID: 2613205638126841930, guid: 2580371abbb06b347bf46341f0653121, type: 3}
+  - {fileID: 2613205638126841930, guid: 2580371abbb06b347bf46341f0653121, type: 3}
+  - {fileID: 2613205638126841930, guid: 2580371abbb06b347bf46341f0653121, type: 3}
   planets:
   - {fileID: 4295887886849479704, guid: edd4ae987c6aa4c4d82a0c6882d1a036, type: 3}
   - {fileID: 3249299583531984693, guid: 65e2cb6fd43132c45acb58663fbc8245, type: 3}
@@ -793,7 +792,8 @@ MonoBehaviour:
   - {fileID: 1512387894584942703, guid: 935d56cc601b7df449423a3815d54be6, type: 3}
   - {fileID: 1667566195352970459, guid: 08536e478652b0b43ad55d12b65d4825, type: 3}
   - {fileID: 3816282107766219095, guid: a3086809516e1f84b89b7612694ec210, type: 3}
-  GameTime: 0
+  gameTime: 0
+  speedFactorTest: 0
 --- !u!4 &888386633
 Transform:
   m_ObjectHideFlags: 0
@@ -1030,7 +1030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adf92ebd6475064892c9b60dc5587e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.01
 --- !u!1 &1166979951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6adf92ebd6475064892c9b60dc5587e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.01
 --- !u!1 &1243387728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af01872f0af897f40a5937f3ab2060c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.06
+  startingSpeed: 0.06
+  speed: 0
 --- !u!212 &1243387730
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1253,7 +1252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af01872f0af897f40a5937f3ab2060c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocita: 0.06
+  startingSpeed: 0.06
+  speed: 0
 --- !u!212 &1477674109
 SpriteRenderer:
   m_ObjectHideFlags: 0
