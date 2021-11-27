@@ -5,7 +5,8 @@ using UnityEngine;
 public class ShipController : MonoBehaviour
 {
     Rigidbody2D rb;              //corpo nave
-    public float speed = 3.0f;    //velocità nave
+    public float startingSpeed = 3.0f;// velocità di partenza nave
+    public float speed;    //velocità nave
     Animator animator;
     float asseX;
     public GameObject explosion;
@@ -15,6 +16,7 @@ public class ShipController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        speed = startingSpeed;
     }
 
     void FixedUpdate()      //con il fixed update controllo i movimenti della nave
@@ -26,9 +28,7 @@ public class ShipController : MonoBehaviour
             position.x = position.x + asseX * Time.deltaTime * speed;
             rb.MovePosition(position);
         }
-
-
-
+        speed = startingSpeed * GameController.speedFactor;
     }
 
     // Update is called once per frame

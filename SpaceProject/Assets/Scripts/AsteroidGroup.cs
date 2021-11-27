@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class AsteroidGroup : MonoBehaviour
 {
-    public float velocita = 0.5f;
+    public float startingSpeed = 0.5f;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = startingSpeed;
     }
 
     void FixedUpdate()
     {
         if (transform.position.y > -10.0f)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y - (velocita * Time.deltaTime));
+            transform.position = new Vector2(transform.position.x, transform.position.y - (speed * Time.deltaTime));
         }
         else
         {
             Destroy(gameObject);
         }
+        speed = startingSpeed * GameController.speedFactor;
     }
 }

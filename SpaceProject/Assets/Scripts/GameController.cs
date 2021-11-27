@@ -6,7 +6,8 @@ public class GameController : MonoBehaviour
 {
     public GameObject[] asteroids;
     private float asteroidTimer;
-    private float asteroidTimeToSpawn = 14.0f;
+    private float asteroidStartingTimeToSpawn = 14.0f;
+    private float asteroidTimeToSpawn;
     private Quaternion[] rotations;
 
     public GameObject[] planets;
@@ -14,14 +15,18 @@ public class GameController : MonoBehaviour
     private float planetTimeToSpawn = 0.0f;
     private int planetsIndex = 0;
 
-    public float GameTime;
+    public float gameTime;
+    public static float speedFactor;
+    public float speedFactorTest;
 
     // Start is called before the first frame update
     void Start()
     {
         asteroidTimer = 0.0f;
+        asteroidTimeToSpawn = asteroidStartingTimeToSpawn;
         planetTimer = planetTimeToSpawn;
-        GameTime = 0.0f;
+        gameTime = 0.0f;
+        speedFactor = 1.0f;
         rotations = new Quaternion[4];
         rotations[0] = Quaternion.identity;
         rotations[1] = Quaternion.AngleAxis(180, Vector3.up);
@@ -32,7 +37,9 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        GameTime += Time.deltaTime;
+        gameTime += Time.deltaTime;
+        speedFactor += 0.0001f;
+        speedFactorTest = speedFactor;
 
         if (asteroidTimer > 0.0f)
         {
@@ -44,6 +51,7 @@ public class GameController : MonoBehaviour
             Instantiate(asteroids[Random.Range(0, asteroids.Length)], position, rotations[Random.Range(0, rotations.Length)]);
             asteroidTimer = asteroidTimeToSpawn;
         }
+        asteroidTimeToSpawn = asteroidStartingTimeToSpawn / speedFactor;
 
         if (planetTimer > 0.0f)
         {
