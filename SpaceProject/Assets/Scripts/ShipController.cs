@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
+
     Rigidbody2D rb;              //corpo nave
     public float startingSpeed = 3.0f;// velocità di partenza nave
     public float speed;    //velocità nave
     Animator animator;
     float asseX;
     public GameObject explosion;
+    public GameObject gameOver;
+    public GameObject laMiaNave;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +61,12 @@ public class ShipController : MonoBehaviour
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
+            gameOver.SetActive(true);
+            laMiaNave.SetActive(false);
         }
 
     }
+
+   
+
 }
