@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (ShipController.partita == true)
+        if (ShipController.partita == true)  //gameover
         {
 
             gameTime += Time.deltaTime;

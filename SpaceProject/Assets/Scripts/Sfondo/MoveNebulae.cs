@@ -16,7 +16,7 @@ public class MoveNebulae : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (ShipController.partita == true)
+        if (ShipController.partita == true)   //gameover
         {
             if (transform.position.y > -12.8f)
             {
