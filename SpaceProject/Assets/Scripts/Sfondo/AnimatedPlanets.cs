@@ -16,14 +16,18 @@ public class AnimatedPlanets : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (transform.position.y > -5.0f)
+        if (ShipController.partita == true)
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y - (speed * Time.deltaTime));
+
+            if (transform.position.y > -5.0f)
+            {
+                transform.position = new Vector2(transform.position.x, transform.position.y - (speed * Time.deltaTime));
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            speed = startingSpeed * GameController.speedFactor;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-        speed = startingSpeed * GameController.speedFactor;
     }
 }

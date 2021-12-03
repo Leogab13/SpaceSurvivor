@@ -15,8 +15,13 @@ public class punteggio : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        GetComponent<Text>().text = score.ToString();
 
-        score = score + 10;
+        if (ShipController.partita == true)
+        {
+            GetComponent<Text>().text = score.ToString();
+
+            score = score + 10;
+        }
+        
     }
 }

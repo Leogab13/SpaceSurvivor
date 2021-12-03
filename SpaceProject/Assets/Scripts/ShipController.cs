@@ -14,9 +14,14 @@ public class ShipController : MonoBehaviour
     public GameObject gameOver;
     public GameObject laMiaNave;
 
+    public static bool partita=true;      //gestione della partita, true=vivo false=gameover
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         speed = startingSpeed;
@@ -61,8 +66,9 @@ public class ShipController : MonoBehaviour
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
-            gameOver.SetActive(true);
-            laMiaNave.SetActive(false);
+            gameOver.SetActive(true);      //gameover
+            laMiaNave.SetActive(false);  //gameover
+            partita = false;     //gameover
         }
 
     }

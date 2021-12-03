@@ -37,38 +37,43 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        gameTime += Time.deltaTime;
-        speedFactor += 0.0001f;
-        speedFactorTest = speedFactor;//TODO da rimuovere
+        if (ShipController.partita == true)
+        {
 
-        if (asteroidTimer > 0.0f)
-        {
-            asteroidTimer -= Time.deltaTime;
-        }
-        else
-        {
-            var position = new Vector2(0.0f, 6.4f);
-            Instantiate(asteroids[Random.Range(0, asteroids.Length)], position, rotations[Random.Range(0, rotations.Length)]);
-            asteroidTimer = asteroidTimeToSpawn;
-        }
-        asteroidTimeToSpawn = asteroidStartingTimeToSpawn / speedFactor;
+            gameTime += Time.deltaTime;
+            speedFactor += 0.0001f;
+            speedFactorTest = speedFactor;//TODO da rimuovere
 
-        if (planetTimer > 0.0f)
-        {
-            planetTimer -= Time.deltaTime;
-        }
-        else
-        {
-            var position = new Vector2(Random.Range(-1.7f, 1.7f), 4.0f);
-            Instantiate(planets[planetsIndex], position, Quaternion.identity);
-            planetsIndex++;
-            planetTimeToSpawn += 20.0f;
-            if (planetsIndex >= planets.Length)
+
+            if (asteroidTimer > 0.0f)
             {
-                planetsIndex = 0;
-                planetTimeToSpawn = 0.0f;
+                asteroidTimer -= Time.deltaTime;
             }
-            planetTimer = planetTimeToSpawn;
+            else
+            {
+                var position = new Vector2(0.0f, 6.4f);
+                Instantiate(asteroids[Random.Range(0, asteroids.Length)], position, rotations[Random.Range(0, rotations.Length)]);
+                asteroidTimer = asteroidTimeToSpawn;
+            }
+            asteroidTimeToSpawn = asteroidStartingTimeToSpawn / speedFactor;
+
+            if (planetTimer > 0.0f)
+            {
+                planetTimer -= Time.deltaTime;
+            }
+            else
+            {
+                var position = new Vector2(Random.Range(-1.7f, 1.7f), 4.0f);
+                Instantiate(planets[planetsIndex], position, Quaternion.identity);
+                planetsIndex++;
+                planetTimeToSpawn += 20.0f;
+                if (planetsIndex >= planets.Length)
+                {
+                    planetsIndex = 0;
+                    planetTimeToSpawn = 0.0f;
+                }
+                planetTimer = planetTimeToSpawn;
+            }
         }
     }
 }
