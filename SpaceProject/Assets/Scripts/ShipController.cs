@@ -13,6 +13,7 @@ public class ShipController : MonoBehaviour
     public GameObject explosion;
     public GameObject gameOver;
     public GameObject laMiaNave;
+    public GameObject hBar3;
 
     public static bool partita=true;      //gestione della partita, true=vivo false=gameover
 
@@ -66,6 +67,7 @@ public class ShipController : MonoBehaviour
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
+            hBar3.SetActive(false);
             gameOver.SetActive(true);      //gameover
             laMiaNave.SetActive(false);  //gameover
             partita = false;     //gameover
