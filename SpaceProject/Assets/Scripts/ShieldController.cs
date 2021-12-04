@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
-    public float timer = 15.0f;
+    public static float totalTime = 15.0f;
+    public static float timer;
     public GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = totalTime;
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class ShieldController : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            timer = totalTime;
         }
     }
 

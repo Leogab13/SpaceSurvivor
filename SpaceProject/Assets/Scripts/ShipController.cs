@@ -12,6 +12,7 @@ public class ShipController : MonoBehaviour
     float asseX;
     public GameObject explosion;
     private GameObject shield;
+    private bool shieldActive;
     public GameObject gameOver;
     public GameObject laMiaNave;
 
@@ -35,6 +36,7 @@ public class ShipController : MonoBehaviour
         speed = startingSpeed;
         shield = laMiaNave.transform.Find("shield").gameObject;
         shield.SetActive(false);
+        shieldActive = false;
     }
 
     void FixedUpdate()      //con il fixed update controllo i movimenti della nave
@@ -89,6 +91,8 @@ public class ShipController : MonoBehaviour
             hbarMedium.SetActive(false);
             hbarLow.SetActive(false);
         }
+
+        shieldActive = shield.activeSelf;
     }
 
 
@@ -102,7 +106,7 @@ public class ShipController : MonoBehaviour
             collision.gameObject.SetActive(false);
             punteggio.score = punteggio.score + 2000;
         }
-        if (collision.name.Contains("Asteroid"))
+        if (collision.name.Contains("Asteroid") && !shieldActive)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
@@ -127,8 +131,16 @@ public class ShipController : MonoBehaviour
         }
         if (collision.name.Contains("ShieldCollectible"))
         {
-            collision.gameObject.SetActive(false);
-            shield.SetActive(true);
+            if (shieldActive)
+            {
+                ShieldController.timer = ShieldController.totalTime;
+            }
+            else
+            {
+                collision.gameObject.SetActive(false);
+                shield.SetActive(true);
+                shieldActive = true;
+            }
         }
     }
 
