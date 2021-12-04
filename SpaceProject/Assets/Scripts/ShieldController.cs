@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
-    private float timer = 5.0f;
+    public float timer = 15.0f;
     public GameObject explosion;
 
     // Start is called before the first frame update
