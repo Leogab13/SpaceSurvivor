@@ -13,13 +13,19 @@ public class ShipController : MonoBehaviour
     public GameObject explosion;
     public GameObject gameOver;
     public GameObject laMiaNave;
-    public GameObject hBar3;
+    
+    //di seguito le 3 barre salute
+    public GameObject hbarHigh;
+    public GameObject hbarMedium;
+    public GameObject hbarLow;
 
+
+    public int life = 3;   // 3 vite a partita , viene decrementato di 1 ad ogni collisione , a 0=gameover , uso life anche per gestire la healthbar
     public static bool partita=true;      //gestione della partita, true=vivo false=gameover
 
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -55,7 +61,7 @@ public class ShipController : MonoBehaviour
         animator.SetFloat("MoveX", asseX);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)   //gestione collisioni
     {
 
         if (collision.name.Contains("Coin"))
@@ -67,10 +73,10 @@ public class ShipController : MonoBehaviour
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
-            hBar3.SetActive(false);
             gameOver.SetActive(true);      //gameover
             laMiaNave.SetActive(false);  //gameover
             partita = false;     //gameover
+            life = life - 1;    //decremento di 1 la vita
         }
 
     }
