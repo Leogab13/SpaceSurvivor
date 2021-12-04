@@ -13,7 +13,7 @@ public class ShipController : MonoBehaviour
     public GameObject explosion;
     public GameObject gameOver;
     public GameObject laMiaNave;
-    
+
     //di seguito le 3 barre salute
     public GameObject hbarHigh;
     public GameObject hbarMedium;
@@ -21,14 +21,14 @@ public class ShipController : MonoBehaviour
 
 
     public int life = 3;   // 3 vite a partita , viene decrementato di 1 ad ogni collisione , a 0=gameover , uso life anche per gestire la healthbar
-    public static bool partita=true;      //gestione della partita, true=vivo false=gameover
+    public static bool partita = true;      //gestione della partita, true=vivo false=gameover
 
 
 
-    
+
     void Start()
     {
-        
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         speed = startingSpeed;
@@ -59,7 +59,37 @@ public class ShipController : MonoBehaviour
             animator.SetBool("Stopped", false);
         }
         animator.SetFloat("MoveX", asseX);
+
+
+        //gestione healthbar:
+        if (life == 3)
+        {
+            hbarHigh.SetActive(true);
+            hbarMedium.SetActive(false);
+            hbarLow.SetActive(false);
+        }
+        if (life == 2)
+        {
+            hbarHigh.SetActive(false);
+            hbarMedium.SetActive(true);
+            hbarLow.SetActive(false);
+        }
+        if (life == 1)
+        {
+            hbarHigh.SetActive(false);
+            hbarMedium.SetActive(false);
+            hbarLow.SetActive(true);
+        }
+        if (life == 0)
+        {
+            hbarHigh.SetActive(false);
+            hbarMedium.SetActive(false);
+            hbarLow.SetActive(false);
+        }
     }
+
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)   //gestione collisioni
     {
@@ -73,13 +103,22 @@ public class ShipController : MonoBehaviour
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
-            gameOver.SetActive(true);      //gameover
-            laMiaNave.SetActive(false);  //gameover
-            partita = false;     //gameover
+          
             life = life - 1;    //decremento di 1 la vita
+            if (life == 0)
+            {
+                hbarLow.SetActive(false);       //boh, funziona solo qui e non negli if di sopra
+                gameOver.SetActive(true);      //gameover
+                laMiaNave.SetActive(false);  //gameover
+                partita = false;
+            }
+
         }
 
     }
+
+   
+
 
    
 
