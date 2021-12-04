@@ -11,6 +11,7 @@ public class ShipController : MonoBehaviour
     Animator animator;
     float asseX;
     public GameObject explosion;
+    private GameObject shield;
     public GameObject gameOver;
     public GameObject laMiaNave;
 
@@ -32,6 +33,8 @@ public class ShipController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         speed = startingSpeed;
+        shield = laMiaNave.transform.Find("shield").gameObject;
+        shield.SetActive(false);
     }
 
     void FixedUpdate()      //con il fixed update controllo i movimenti della nave
@@ -104,7 +107,7 @@ public class ShipController : MonoBehaviour
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
           
-            life = life - 1;    //decremento di 1 la vita
+            life--;    //decremento di 1 la vita
             if (life == 0)
             {
                 hbarLow.SetActive(false);       //boh, funziona solo qui e non negli if di sopra
@@ -114,12 +117,24 @@ public class ShipController : MonoBehaviour
             }
 
         }
-
+        if (collision.name.Contains("HealthCollectible"))
+        {
+            collision.gameObject.SetActive(false);
+            if (life < 3)
+            {
+                life++;
+            }
+        }
+        if (collision.name.Contains("ShieldCollectible"))
+        {
+            collision.gameObject.SetActive(false);
+            shield.SetActive(true);
+        }
     }
 
-   
 
 
-   
+
+
 
 }
