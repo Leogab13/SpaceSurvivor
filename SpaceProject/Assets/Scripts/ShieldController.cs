@@ -8,9 +8,12 @@ public class ShieldController : MonoBehaviour
     public static float timer;
     public GameObject explosion;
 
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         timer = totalTime;
     }
 
@@ -34,6 +37,7 @@ public class ShieldController : MonoBehaviour
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
+            audioSource.Play();
         }
     }
 }

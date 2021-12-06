@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
-
     AudioSource audioSource;
-
 
     Rigidbody2D rb;              //corpo nave
     public float startingSpeed = 3.0f;// velocità di partenza nave
