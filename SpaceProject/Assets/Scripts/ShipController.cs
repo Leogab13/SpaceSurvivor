@@ -7,14 +7,23 @@ public class ShipController : MonoBehaviour
     AudioSource audioSource;
 
     Rigidbody2D rb;              //corpo nave
+
     public float startingSpeed = 3.0f;// velocità di partenza nave
     public float speed;    //velocità nave
+
     Animator animator;
     float asseX;
+
     public GameObject explosion;
+
     private GameObject shield;
     private bool shieldActive;
+
     public GameObject gameOver;
+    private float timeOfDeath;
+    private float deathDelay = 1.0f;
+    private bool dead = false;
+
     public GameObject laMiaNave;
 
     //di seguito le 3 barre salute
@@ -95,6 +104,12 @@ public class ShipController : MonoBehaviour
             hbarLow.SetActive(false);
         }
 
+        if (dead && Time.time>=(timeOfDeath+deathDelay))
+        {
+            laMiaNave.SetActive(false);  //gameover
+            partita = false;
+        }
+
         shieldActive = shield.activeSelf;
     }
 
@@ -119,11 +134,10 @@ public class ShipController : MonoBehaviour
           
             if (life == 0)
             {
-               
-                hbarLow.SetActive(false);       //boh, funziona solo qui e non negli if di sopra
+
+                dead = true;
+                timeOfDeath = Time.time;
                 gameOver.SetActive(true);      //gameover
-                laMiaNave.SetActive(false);  //gameover
-                partita = false;
             }
 
         }
