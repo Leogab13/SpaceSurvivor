@@ -5,6 +5,9 @@ using UnityEngine;
 public class ShipController : MonoBehaviour
 {
 
+    AudioSource audioSource;
+
+
     Rigidbody2D rb;              //corpo nave
     public float startingSpeed = 3.0f;// velocità di partenza nave
     public float speed;    //velocità nave
@@ -30,6 +33,8 @@ public class ShipController : MonoBehaviour
 
     void Start()
     {
+
+        audioSource = GetComponent<AudioSource>();
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -110,10 +115,13 @@ public class ShipController : MonoBehaviour
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
+            audioSource.Play();
           
             life--;    //decremento di 1 la vita
+          
             if (life == 0)
             {
+               
                 hbarLow.SetActive(false);       //boh, funziona solo qui e non negli if di sopra
                 gameOver.SetActive(true);      //gameover
                 laMiaNave.SetActive(false);  //gameover
