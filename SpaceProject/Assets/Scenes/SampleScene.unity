@@ -2030,13 +2030,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1078683759}
     - target: {fileID: 1497989923018614823, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
+      propertyPath: coinSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 39ff0d33244677045b8af678871abd07, type: 3}
+    - target: {fileID: 1497989923018614823, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ba1ff7463dc265347a8a7667e14e1f3f, type: 3}
+    - target: {fileID: 1497989923018614823, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
       propertyPath: hbarMedium
       value: 
       objectReference: {fileID: 1101951044}
     - target: {fileID: 1497989923018614823, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1453018080}
+    - target: {fileID: 1497989923018614823, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
+      propertyPath: healthSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 235e3324b4e2fb44bad5aba71eb275d3, type: 3}
+    - target: {fileID: 1497989923018614823, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
+      propertyPath: shieldSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 235e3324b4e2fb44bad5aba71eb275d3, type: 3}
+    - target: {fileID: 1497989923018614823, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
       propertyPath: startingSpeed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1497989923018614823, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
+      propertyPath: explosionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 294c1ea724f3eb7429718df17ed2aaa0, type: 3}
     - target: {fileID: 1497989923018614826, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
       propertyPath: m_Name
       value: myShip

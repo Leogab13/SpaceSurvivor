@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
-    AudioSource audioSource;
+    public AudioSource audioSource;
+    public AudioClip explosionSound;
+    public AudioClip coinSound;
+    public AudioClip healthSound;
+    public AudioClip shieldSound;
+    public AudioClip deathSound;
+
 
     Rigidbody2D rb;                     //corpo nave
 
@@ -35,8 +41,11 @@ public class ShipController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         rb = GetComponent<Rigidbody2D>();
+
         animator = GetComponent<Animator>();
+
         speed = startingSpeed;
+
         shield = this.transform.Find("shield").gameObject;
         shield.SetActive(false);
         shieldActive = false;
@@ -110,25 +119,29 @@ public class ShipController : MonoBehaviour
         if (collision.name.Contains("Coin"))
         {
             collision.gameObject.SetActive(false);
+            audioSource.PlayOneShot(coinSound);
             punteggio.score = punteggio.score + 2000;
         }
         if (collision.name.Contains("Asteroid") && !shieldActive)
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
-            audioSource.Play();
+            audioSource.PlayOneShot(explosionSound);
           
             life--;    //decremento di 1 la vita
           
             if (life == 0)
             {
-                dead = true;                
+                dead = true;
+                audioSource.PlayOneShot(deathSound);
+
             }
 
         }
         if (collision.name.Contains("HealthCollectible"))
         {
             collision.gameObject.SetActive(false);
+            audioSource.PlayOneShot(healthSound);
             if (life < 3)
             {
                 life++;
@@ -136,13 +149,15 @@ public class ShipController : MonoBehaviour
         }
         if (collision.name.Contains("ShieldCollectible"))
         {
+            collision.gameObject.SetActive(false);
+            audioSource.PlayOneShot(shieldSound);
+
             if (shieldActive)
             {
                 ShieldController.timer = ShieldController.totalTime;
             }
             else
             {
-                collision.gameObject.SetActive(false);
                 shield.SetActive(true);
                 shieldActive = true;
             }
