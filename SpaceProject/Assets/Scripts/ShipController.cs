@@ -6,12 +6,13 @@ public class ShipController : MonoBehaviour
 {
     AudioSource audioSource;
 
-    Rigidbody2D rb;              //corpo nave
+    Rigidbody2D rb;                     //corpo nave
 
-    public float startingSpeed = 3.0f;// velocità di partenza nave
-    public float speed;    //velocità nave
+    public float startingSpeed = 3.0f;  // velocità di partenza nave
+    public float speed;                 //velocità nave
 
     Animator animator;
+
     float asseX;
 
     public GameObject explosion;
@@ -19,24 +20,18 @@ public class ShipController : MonoBehaviour
     private GameObject shield;
     private bool shieldActive;
 
-    public GameObject gameOver;
-    private float timeOfDeath;
-    private float deathDelay = 1.0f;
-    private bool dead = false;
-
-    public GameObject laMiaNave;
+    public int life = 3;   // 3 vite a partita , viene decrementato di 1 ad ogni collisione , a 0=gameover , uso life anche per gestire la healthbar
 
     //di seguito le 3 barre salute
-    public GameObject hbarHigh;
-    public GameObject hbarMedium;
-    public GameObject hbarLow;
+    public GameObject hbarHigh;     //salute massima = 3
+    public GameObject hbarMedium;   //salute media = 2
+    public GameObject hbarLow;      //salute minima =1
 
-
-    public int life = 3;   // 3 vite a partita , viene decrementato di 1 ad ogni collisione , a 0=gameover , uso life anche per gestire la healthbar
-    public static bool partita = true;      //gestione della partita, true=vivo false=gameover
-
-
-
+    public GameObject gameOver;         //la sprite della scritta GAME OVER
+    private float timeOfDeath;          //il momento della morte
+    private float deathDelay = 1.0f;    //il ritardo tra l'ultima collisione e la fine della partita
+    private bool dead = false;          //false se la nave ha almeno una vita, true dopo l'ultima collisione
+    public static bool partita = true;  //gestione della partita, true=vivo false=gameover
 
     void Start()
     {
@@ -46,42 +41,43 @@ public class ShipController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         speed = startingSpeed;
-        shield = laMiaNave.transform.Find("shield").gameObject;
+        shield = this.transform.Find("shield").gameObject;
         shield.SetActive(false);
         shieldActive = false;
     }
 
     void FixedUpdate()      //con il fixed update controllo i movimenti della nave
     {
-        Vector2 position = rb.position;
+        Vector2 position = rb.position;                                                 //leggo la posizione del rigidbody della nave
 
-        if (!(position.x <= -1.56 && asseX < 0) && !(position.x >= 1.56 && asseX > 0))//se non sto uscendo dai margini della telecamera
+        if (!(position.x <= -1.56 && asseX < 0) && !(position.x >= 1.56 && asseX > 0))  //se non sto uscendo dai margini della telecamera
         {
-            position.x = position.x + asseX * Time.deltaTime * speed;
-            rb.MovePosition(position);
+            position.x = position.x + asseX * Time.deltaTime * speed;                   //calcolo la nuova posizione della nave sull'asse x in funzione della velocità e del tempo trascorso
+            rb.MovePosition(position);                                                  //sposto la nave
         }
-        speed = startingSpeed * GameController.speedFactor;
+        speed = startingSpeed * GameController.speedFactor;                             //calcolo la nuova velocità accelerata
     }
 
     // Update is called once per frame
     void Update()
     {
-        asseX = Input.GetAxisRaw("Horizontal");  //leggo l'input
-        if (Mathf.Approximately(asseX, 0.0f))
+        asseX = Input.GetAxisRaw("Horizontal"); //leggo l'input
+
+        if (Mathf.Approximately(asseX, 0.0f))   //se non c'è movimento
         {
-            animator.SetBool("Stopped", true);
+            animator.SetBool("Stopped", true);  //attivo l'animazione della nave frontale
         }
-        else
+        else                                    //se c'è movimento
         {
-            animator.SetBool("Stopped", false);
+            animator.SetBool("Stopped", false); //disattivo l'animazione della nave frontale
         }
-        animator.SetFloat("MoveX", asseX);
+        animator.SetFloat("MoveX", asseX);      //il parametro MoveX gestisce le animazioni della nave inclinata a destra o a sinistra
 
 
         //gestione healthbar:
         if (life == 3)
         {
-            hbarHigh.SetActive(true);
+            hbarHigh.SetActive(true);   
             hbarMedium.SetActive(false);
             hbarLow.SetActive(false);
         }
@@ -104,13 +100,13 @@ public class ShipController : MonoBehaviour
             hbarLow.SetActive(false);
         }
 
-        if (dead && Time.time>=(timeOfDeath+deathDelay))
+        if (dead && Time.time>=(timeOfDeath+deathDelay)) //dopo un ritardo dal momento della morte
         {
-            laMiaNave.SetActive(false);  //gameover
-            partita = false;
+            gameObject.SetActive(false);                 //faccio scomparire la nave
+            partita = false;                             //fermo tutti gli oggetti mobili
         }
 
-        shieldActive = shield.activeSelf;
+        shieldActive = shield.activeSelf;   //controllo se lo scudo è attivo
     }
 
 
@@ -134,7 +130,6 @@ public class ShipController : MonoBehaviour
           
             if (life == 0)
             {
-
                 dead = true;
                 timeOfDeath = Time.time;
                 gameOver.SetActive(true);      //gameover

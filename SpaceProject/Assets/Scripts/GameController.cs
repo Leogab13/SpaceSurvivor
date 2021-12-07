@@ -17,7 +17,6 @@ public class GameController : MonoBehaviour
 
     public float gameTime;
     public static float speedFactor;
-    public float speedFactorTest;//TODO da rimuovere
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +41,6 @@ public class GameController : MonoBehaviour
 
             gameTime += Time.deltaTime;
             speedFactor += 0.0001f;
-            speedFactorTest = speedFactor;//TODO da rimuovere
 
 
             if (asteroidTimer > 0.0f)
