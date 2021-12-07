@@ -789,7 +789,7 @@ MonoBehaviour:
   - {fileID: 1667566195352970459, guid: 08536e478652b0b43ad55d12b65d4825, type: 3}
   - {fileID: 3816282107766219095, guid: a3086809516e1f84b89b7612694ec210, type: 3}
   gameTime: 0
-  speedFactorTest: 0
+  gameOver: {fileID: 798754835}
 --- !u!4 &888386633
 Transform:
   m_ObjectHideFlags: 0
@@ -2033,6 +2033,10 @@ PrefabInstance:
       propertyPath: hbarMedium
       value: 
       objectReference: {fileID: 1101951044}
+    - target: {fileID: 1497989923018614823, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
+      propertyPath: startingSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1497989923018614826, guid: b998bdeaeedb6c14e88143a00a459087, type: 3}
       propertyPath: m_Name
       value: myShip

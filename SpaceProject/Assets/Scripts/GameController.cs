@@ -18,6 +18,15 @@ public class GameController : MonoBehaviour
     public float gameTime;
     public static float speedFactor;
 
+    private GameObject ship;
+
+    public GameObject gameOver;         //la sprite della scritta GAME OVER
+    private float timeOfDeath;          //il momento della morte
+    private float deathDelay = 1.0f;    //il ritardo tra l'ultima collisione e la fine della partita
+    public static bool partita = true;  //gestione della partita, true=vivo false=gameover
+    private bool readDeath = false;     //se ho già verificato la morte
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,17 +35,36 @@ public class GameController : MonoBehaviour
         planetTimer = planetTimeToSpawn;
         gameTime = 0.0f;
         speedFactor = 1.0f;
+
         rotations = new Quaternion[4];
         rotations[0] = Quaternion.identity;
         rotations[1] = Quaternion.AngleAxis(180, Vector3.up);
         rotations[2] = Quaternion.AngleAxis(180, Vector3.right);
         rotations[3] = Quaternion.AngleAxis(180, Vector3.forward);
+
+        ship = GameObject.Find("myShip");
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        //gestione game over
+        if (ShipController.dead && !readDeath)
+        {
+            timeOfDeath = Time.time;
+            gameOver.SetActive(true);      //gameover
+            readDeath = true;
+        }
+        if (ShipController.dead && Time.time >= (timeOfDeath + deathDelay)) //dopo un ritardo dal momento della morte
+        {
+            ship.gameObject.SetActive(false);                 //faccio scomparire la nave
+            partita = false;                             //fermo tutti gli oggetti mobili
+        }
+    }
+
     void FixedUpdate()
     {
-        if (ShipController.partita == true)  //gameover
+        if (partita == true)  //gameover
         {
 
             gameTime += Time.deltaTime;

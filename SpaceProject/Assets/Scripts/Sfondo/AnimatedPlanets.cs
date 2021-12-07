@@ -16,7 +16,7 @@ public class AnimatedPlanets : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (ShipController.partita == true)
+        if (GameController.partita == true)
         {
 
             if (transform.position.y > -5.0f)

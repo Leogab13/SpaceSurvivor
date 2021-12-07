@@ -16,7 +16,7 @@ public class punteggio : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (ShipController.partita == true)  //gameover
+        if (GameController.partita == true)  //gameover
         {
             GetComponent<Text>().text = score.ToString();
 

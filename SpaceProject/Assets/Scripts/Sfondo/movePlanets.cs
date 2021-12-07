@@ -16,7 +16,7 @@ public class MovePlanets : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (ShipController.partita == true)
+        if (GameController.partita == true)
         {
 
             if (transform.position.y > -12.8f)

@@ -26,12 +26,8 @@ public class ShipController : MonoBehaviour
     public GameObject hbarHigh;     //salute massima = 3
     public GameObject hbarMedium;   //salute media = 2
     public GameObject hbarLow;      //salute minima =1
-
-    public GameObject gameOver;         //la sprite della scritta GAME OVER
-    private float timeOfDeath;          //il momento della morte
-    private float deathDelay = 1.0f;    //il ritardo tra l'ultima collisione e la fine della partita
-    private bool dead = false;          //false se la nave ha almeno una vita, true dopo l'ultima collisione
-    public static bool partita = true;  //gestione della partita, true=vivo false=gameover
+    
+    public static bool dead = false;          //false se la nave ha almeno una vita, true dopo l'ultima collisione
 
     void Start()
     {
@@ -50,9 +46,9 @@ public class ShipController : MonoBehaviour
     {
         Vector2 position = rb.position;                                                 //leggo la posizione del rigidbody della nave
 
-        if (!(position.x <= -1.56 && asseX < 0) && !(position.x >= 1.56 && asseX > 0))  //se non sto uscendo dai margini della telecamera
+        if ( !(position.x <= -1.56 && asseX < 0) && !(position.x >= 1.56 && asseX > 0) )  //se non sto uscendo dai margini della telecamera
         {
-            position.x = position.x + asseX * Time.deltaTime * speed;                   //calcolo la nuova posizione della nave sull'asse x in funzione della velocità e del tempo trascorso
+            position.x = position.x + asseX * Time.deltaTime * speed;                   //calcolo la nuova posizione della nave sull'asse x in funzione dell'input, della velocità e del tempo trascorso
             rb.MovePosition(position);                                                  //sposto la nave
         }
         speed = startingSpeed * GameController.speedFactor;                             //calcolo la nuova velocità accelerata
@@ -61,7 +57,10 @@ public class ShipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        asseX = Input.GetAxisRaw("Horizontal"); //leggo l'input
+        if (!dead)
+        {
+            asseX = Input.GetAxisRaw("Horizontal"); //leggo l'input
+        }
 
         if (Mathf.Approximately(asseX, 0.0f))   //se non c'è movimento
         {
@@ -72,7 +71,6 @@ public class ShipController : MonoBehaviour
             animator.SetBool("Stopped", false); //disattivo l'animazione della nave frontale
         }
         animator.SetFloat("MoveX", asseX);      //il parametro MoveX gestisce le animazioni della nave inclinata a destra o a sinistra
-
 
         //gestione healthbar:
         if (life == 3)
@@ -100,16 +98,10 @@ public class ShipController : MonoBehaviour
             hbarLow.SetActive(false);
         }
 
-        if (dead && Time.time>=(timeOfDeath+deathDelay)) //dopo un ritardo dal momento della morte
-        {
-            gameObject.SetActive(false);                 //faccio scomparire la nave
-            partita = false;                             //fermo tutti gli oggetti mobili
-        }
+        
 
         shieldActive = shield.activeSelf;   //controllo se lo scudo è attivo
     }
-
-
 
 
     private void OnTriggerEnter2D(Collider2D collision)   //gestione collisioni
@@ -130,9 +122,7 @@ public class ShipController : MonoBehaviour
           
             if (life == 0)
             {
-                dead = true;
-                timeOfDeath = Time.time;
-                gameOver.SetActive(true);      //gameover
+                dead = true;                
             }
 
         }
