@@ -9,7 +9,7 @@ public class ShipController : MonoBehaviour
     public AudioClip coinSound;
     public AudioClip healthSound;
     public AudioClip shieldSound;
-    public AudioClip deathSound;
+ 
 
 
     Rigidbody2D rb;                     //corpo nave
@@ -133,8 +133,7 @@ public class ShipController : MonoBehaviour
             if (life == 0)
             {
                 dead = true;
-                audioSource.PlayOneShot(deathSound);
-
+        
             }
 
         }
