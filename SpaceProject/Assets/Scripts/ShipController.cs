@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShipController : MonoBehaviour
 {
     public AudioSource audioSource;
-    public AudioClip explosionSound;
     public AudioClip coinSound;
     public AudioClip healthSound;
     public AudioClip shieldSound;
@@ -126,7 +125,6 @@ public class ShipController : MonoBehaviour
         {
             Instantiate(explosion, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
-            audioSource.PlayOneShot(explosionSound);
           
             life--;    //decremento di 1 la vita
           
