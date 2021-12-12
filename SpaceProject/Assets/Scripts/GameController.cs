@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     AudioSource audioSource;
-    int var = 1;
-
+    
     public GameObject[] asteroids;
     private float asteroidTimer;
     private float asteroidStartingTimeToSpawn = 14.0f;
@@ -24,10 +23,8 @@ public class GameController : MonoBehaviour
     private GameObject ship;
 
     public GameObject gameOver;         //la sprite della scritta GAME OVER
-    private float timeOfDeath;          //il momento della morte
     public static bool partita = true;  //gestione della partita, true=vivo false=gameover
-    private bool readDeath = false;     //se ho già verificato la morte
-
+    private bool processedDeath = false;     //se ho già verificato la morte
 
    
 
@@ -54,22 +51,16 @@ public class GameController : MonoBehaviour
     void Update()
     {
         //gestione game over
-        if (ShipController.dead && !readDeath)
+        if (ShipController.dead && !processedDeath)
         {
-            timeOfDeath = Time.time;
             gameOver.SetActive(true);      //gameover
-            readDeath = true;
-        }
-        if (ShipController.dead && Time.time >= (timeOfDeath)) 
-        {
-            if (var == 1)
-            {
-                audioSource.Play();
-                var = 0;
-            }
+
             ship.gameObject.SetActive(false); //faccio scomparire la nave
-            partita = false;                             //fermo tutti gli oggetti mobili
-        }
+            partita = false;                  //fermo tutti gli oggetti mobili
+            audioSource.Play();
+
+            processedDeath = true;
+        }       
     }
 
     void FixedUpdate()

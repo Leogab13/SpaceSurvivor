@@ -100,12 +100,12 @@ public class ShipController : MonoBehaviour
             hbarMedium.SetActive(false);
             hbarLow.SetActive(true);
         }
-        if (life == 0)
+        /*if (life == 0)
         {
             hbarHigh.SetActive(false);
             hbarMedium.SetActive(false);
             hbarLow.SetActive(false);
-        }
+        }*/
 
         
 
@@ -132,6 +132,7 @@ public class ShipController : MonoBehaviour
           
             if (life == 0)
             {
+                hbarLow.SetActive(false);
                 dead = true;
         
             }
