@@ -25,7 +25,6 @@ public class GameController : MonoBehaviour
 
     public GameObject gameOver;         //la sprite della scritta GAME OVER
     private float timeOfDeath;          //il momento della morte
-    private float deathDelay = 1f;    //il ritardo tra l'ultima collisione e la fine della partita
     public static bool partita = true;  //gestione della partita, true=vivo false=gameover
     private bool readDeath = false;     //se ho già verificato la morte
 
