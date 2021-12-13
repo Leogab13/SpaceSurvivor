@@ -7,7 +7,7 @@ public class Restart : MonoBehaviour
 {
     public void Riavvia()
     {
-        GameController.partita = false;
+        GameController.partita = true;
         SceneManager.LoadScene(0);
     }
 }
