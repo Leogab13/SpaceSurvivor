@@ -25,14 +25,14 @@ public class ShipController : MonoBehaviour
     private GameObject shield;
     private bool shieldActive;
 
-    public int life = 3;   // 3 vite a partita , viene decrementato di 1 ad ogni collisione , a 0=gameover , uso life anche per gestire la healthbar
+    public int life;   // 3 vite a partita , viene decrementato di 1 ad ogni collisione , a 0=gameover , uso life anche per gestire la healthbar
 
     //di seguito le 3 barre salute
     public GameObject hbarHigh;     //salute massima = 3
     public GameObject hbarMedium;   //salute media = 2
     public GameObject hbarLow;      //salute minima =1
     
-    public static bool dead = false;          //false se la nave ha almeno una vita, true dopo l'ultima collisione
+    public static bool dead;          //false se la nave ha almeno una vita, true dopo l'ultima collisione
 
     void Start()
     {
@@ -44,6 +44,8 @@ public class ShipController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         speed = startingSpeed;
+        life = 3;
+        dead = false;
 
         shield = this.transform.Find("shield").gameObject;
         shield.SetActive(false);

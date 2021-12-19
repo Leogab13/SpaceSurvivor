@@ -23,8 +23,8 @@ public class GameController : MonoBehaviour
     private GameObject ship;
 
     public GameObject gameOver;         //la sprite della scritta GAME OVER
-    public static bool partita = true;  //gestione della partita, true=vivo false=gameover
-    private bool processedDeath = false;     //se ho già verificato la morte
+    public static bool partita;  //gestione della partita, true=vivo false=gameover
+    private bool processedDeath;     //se ho già verificato la morte
 
    
 
@@ -37,6 +37,9 @@ public class GameController : MonoBehaviour
         planetTimer = planetTimeToSpawn;
         gameTime = 0.0f;
         speedFactor = 1.0f;
+
+        partita = true;
+        processedDeath = false;
 
         rotations = new Quaternion[4];
         rotations[0] = Quaternion.identity;

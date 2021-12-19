@@ -18,10 +18,11 @@ public class TouchInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        touch = Input.GetTouch(0);
 
         if (Input.touchCount > 0)
         {
+            touch = Input.GetTouch(0);
+
             if (left.Contains(touch.position))
             {
                 Debug.Log("left touched");
