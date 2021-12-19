@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovePlanets : MonoBehaviour
 {
-    public float startingSpeed = 0.2f;
+    public float startingSpeed = 0.4f;
     public float speed;
     
 
