@@ -69,7 +69,14 @@ public class ShipController : MonoBehaviour
     {
         if (!dead)
         {
-            asseX = Input.GetAxisRaw("Horizontal"); //leggo l'input
+            if (TouchInput.touched)
+            {
+                asseX = TouchInput.axis;
+            }
+            else
+            {
+                asseX = Input.GetAxisRaw("Horizontal"); //leggo l'input
+            }
         }
 
         if (Mathf.Approximately(asseX, 0.0f))   //se non c'è movimento
