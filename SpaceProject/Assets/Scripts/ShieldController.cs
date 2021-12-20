@@ -13,8 +13,6 @@ public class ShieldController : MonoBehaviour
     void Start()
     {
         timer = totalTime;
-        shieldSFX = GameObject.Find("shieldSFX").gameObject;
-        shieldSFX.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,7 +24,6 @@ public class ShieldController : MonoBehaviour
         }
         else
         {
-            shieldSFX.SetActive(true);
             gameObject.SetActive(false);
             timer = totalTime;
         }

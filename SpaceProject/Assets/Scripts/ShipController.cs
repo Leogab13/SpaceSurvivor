@@ -8,6 +8,7 @@ public class ShipController : MonoBehaviour
     public AudioClip coinSound;
     public AudioClip healthSound;
     public AudioClip shieldSound;
+    public AudioClip shieldDownSound;
  
 
 
@@ -24,7 +25,7 @@ public class ShipController : MonoBehaviour
 
     private GameObject shield;
     private bool shieldActive;
-    private GameObject shieldSFX;
+    private bool tempShieldActive;
 
     public int life;   // 3 vite a partita , viene decrementato di 1 ad ogni collisione , a 0=gameover , uso life anche per gestire la healthbar
 
@@ -51,8 +52,6 @@ public class ShipController : MonoBehaviour
         shield = this.transform.Find("shield").gameObject;
         shield.SetActive(false);
         shieldActive = false;
-        shieldSFX = this.transform.Find("shieldSFX").gameObject;
-        shieldSFX.SetActive(false);
     }
 
     void FixedUpdate()      //con il fixed update controllo i movimenti della nave
@@ -118,9 +117,14 @@ public class ShipController : MonoBehaviour
             hbarLow.SetActive(false);
         }*/
 
-        
 
+        tempShieldActive = shieldActive;
         shieldActive = shield.activeSelf;   //controllo se lo scudo è attivo
+        if (tempShieldActive && !shieldActive)
+        {
+            audioSource.PlayOneShot(shieldDownSound);
+        }
+
     }
 
 
