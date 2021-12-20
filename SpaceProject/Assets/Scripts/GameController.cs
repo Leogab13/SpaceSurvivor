@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
         {
 
             gameTime += Time.deltaTime;
-            speedFactor += 0.0005f;
+            speedFactor += 0.0003f;
 
 
             if (asteroidTimer > 0.0f)
