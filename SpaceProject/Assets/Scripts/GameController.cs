@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
 
     public float gameTime;
     public static float speedFactor;
+    private float speedFactorMax = 4.0f;
+    public float speedFactorTest; //DA RIMUOVERE
 
     private GameObject ship;
 
@@ -63,7 +65,7 @@ public class GameController : MonoBehaviour
             audioSource.Play();
 
             processedDeath = true;
-        }       
+        }
     }
 
     void FixedUpdate()
@@ -72,8 +74,11 @@ public class GameController : MonoBehaviour
         {
 
             gameTime += Time.deltaTime;
-            speedFactor += 0.0003f;
-
+            if (speedFactor<speedFactorMax)
+            {
+                speedFactor += 0.0003f;
+                speedFactorTest = speedFactor; //DA RIMUOVERE
+            }
 
             if (asteroidTimer > 0.0f)
             {
