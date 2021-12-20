@@ -13,7 +13,7 @@ public class ShipController : MonoBehaviour
 
     Rigidbody2D rb;                     //corpo nave
 
-    public float startingSpeed = 3.0f;  // velocità di partenza nave
+    public float startingSpeed = 2.5f;  // velocità di partenza nave
     public float speed;                 //velocità nave
 
     Animator animator;
