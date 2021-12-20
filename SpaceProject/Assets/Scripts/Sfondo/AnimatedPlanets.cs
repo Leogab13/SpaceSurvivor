@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AnimatedPlanets : MonoBehaviour
 {
-    public float startingSpeed = 0.4f;
-    public float speed;
+    private float startingSpeed = 0.4f;
+    private float speed;
 
     // Start is called before the first frame update
     void Start()

@@ -7,11 +7,14 @@ public class ShieldController : MonoBehaviour
     public static float totalTime = 15.0f;
     public static float timer;
     public GameObject explosion;
+    private GameObject shieldSFX;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = totalTime;
+        shieldSFX = GameObject.Find("shieldSFX").gameObject;
+        shieldSFX.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class ShieldController : MonoBehaviour
         }
         else
         {
+            shieldSFX.SetActive(true);
             gameObject.SetActive(false);
             timer = totalTime;
         }

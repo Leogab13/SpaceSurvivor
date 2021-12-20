@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveStars : MonoBehaviour
 {
-    public float startingSpeed = 0.02f;
-    public float speed;
+    private float startingSpeed = 0.02f;
+    private float speed;
 
     // Start is called before the first frame update
     void Start()

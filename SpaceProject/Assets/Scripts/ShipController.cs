@@ -13,8 +13,8 @@ public class ShipController : MonoBehaviour
 
     Rigidbody2D rb;                     //corpo nave
 
-    public float startingSpeed = 2.0f;  // velocità di partenza nave
-    public float speed;                 //velocità nave
+    private float startingSpeed = 2.0f;  // velocità di partenza nave
+    private float speed;                 //velocità nave
 
     Animator animator;
 
@@ -24,6 +24,7 @@ public class ShipController : MonoBehaviour
 
     private GameObject shield;
     private bool shieldActive;
+    private GameObject shieldSFX;
 
     public int life;   // 3 vite a partita , viene decrementato di 1 ad ogni collisione , a 0=gameover , uso life anche per gestire la healthbar
 
@@ -50,6 +51,8 @@ public class ShipController : MonoBehaviour
         shield = this.transform.Find("shield").gameObject;
         shield.SetActive(false);
         shieldActive = false;
+        shieldSFX = this.transform.Find("shieldSFX").gameObject;
+        shieldSFX.SetActive(false);
     }
 
     void FixedUpdate()      //con il fixed update controllo i movimenti della nave

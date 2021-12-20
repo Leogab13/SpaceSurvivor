@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AsteroidGroup : MonoBehaviour
 {
-    public float startingSpeed = 2.5f;
-    public float speed;
+    private float startingSpeed = 1.0f;
+    private float speed;
 
     // Start is called before the first frame update
     void Start()

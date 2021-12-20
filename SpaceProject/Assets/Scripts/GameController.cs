@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     
     public GameObject[] asteroids;
     private float asteroidTimer;
-    private float asteroidStartingTimeToSpawn = 13f;
+    private float asteroidStartingTimeToSpawn = 7.0f;
     private float asteroidTimeToSpawn;
     private Quaternion[] rotations;
 
