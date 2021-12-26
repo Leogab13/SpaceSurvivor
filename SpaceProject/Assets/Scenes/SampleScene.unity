@@ -953,12 +953,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroids:
+  - {fileID: 8254395492756316404, guid: 222014f3e6913de488a7bb1a7fafb6c3, type: 3}
+  - {fileID: 509300704867262325, guid: 4c2441ed73f43a64490f06bea2cdc03e, type: 3}
+  - {fileID: 1088172884421268788, guid: e2f8448c16ca59a408fde14278f4c4a5, type: 3}
+  - {fileID: 6207737579196248250, guid: b26bd290793c79344816416a83980c13, type: 3}
   - {fileID: 1365493320081731679, guid: 2cadb3dbbd989114d80aff36d12d26a1, type: 3}
-  - {fileID: 1365493320081731679, guid: 2cadb3dbbd989114d80aff36d12d26a1, type: 3}
-  - {fileID: 1365493320081731679, guid: 2cadb3dbbd989114d80aff36d12d26a1, type: 3}
-  - {fileID: 1365493320081731679, guid: 2cadb3dbbd989114d80aff36d12d26a1, type: 3}
-  - {fileID: 1365493320081731679, guid: 2cadb3dbbd989114d80aff36d12d26a1, type: 3}
-  - {fileID: 1365493320081731679, guid: 2cadb3dbbd989114d80aff36d12d26a1, type: 3}
+  - {fileID: 9201957021717162336, guid: 0cff3aad604c5a146b1f7f8c8ded4ee5, type: 3}
+  - {fileID: 2480180351113260991, guid: 0966eeefe72654e40a4fdf875474ce42, type: 3}
   planets:
   - {fileID: 4295887886849479704, guid: edd4ae987c6aa4c4d82a0c6882d1a036, type: 3}
   - {fileID: 3249299583531984693, guid: 65e2cb6fd43132c45acb58663fbc8245, type: 3}
