@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3584289006993000824}
   - component: {fileID: 3065363697224188435}
   m_Layer: 0
-  m_Name: BonusGroup1
+  m_Name: Group10B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
