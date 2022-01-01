@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
-    public static float totalTime = 15.0f;
+    public static float totalTime = 13.0f;
     public static float timer;
     public GameObject explosion;
     private GameObject shieldSFX;
