@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa303c72ccb4804886960a937d91161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroids:
+  asteroidGroups:
   - {fileID: 8254395492756316404, guid: 222014f3e6913de488a7bb1a7fafb6c3, type: 3}
   - {fileID: 509300704867262325, guid: 4c2441ed73f43a64490f06bea2cdc03e, type: 3}
   - {fileID: 1088172884421268788, guid: e2f8448c16ca59a408fde14278f4c4a5, type: 3}
@@ -967,7 +967,7 @@ MonoBehaviour:
   - {fileID: 700433823407173458, guid: 692071fe363e7474f888fce4219eb2e8, type: 3}
   - {fileID: 3916934221731172851, guid: 84170c130feed394eba493f1faba3433, type: 3}
   - {fileID: 2489519238253807375, guid: 4d04c838687abce4a93dcb52b91fac2c, type: 3}
-  - {fileID: 2489519238253807375, guid: 4d04c838687abce4a93dcb52b91fac2c, type: 3}
+  - {fileID: 2158802246409518340, guid: b20582b42a544924aad0c32eda089191, type: 3}
   planets:
   - {fileID: 4295887886849479704, guid: edd4ae987c6aa4c4d82a0c6882d1a036, type: 3}
   - {fileID: 3249299583531984693, guid: 65e2cb6fd43132c45acb58663fbc8245, type: 3}

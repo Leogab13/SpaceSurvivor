@@ -6,11 +6,16 @@ public class GameController : MonoBehaviour
 {
     AudioSource audioSource;
     
-    public GameObject[] asteroids;
+    public GameObject[] asteroidGroups;
     private float asteroidTimer;
     private float asteroidStartingTimeToSpawn = 7.0f;
     private float asteroidTimeToSpawn;
     private Quaternion[] rotations;
+    private Vector2 asteroidPoolPosition;
+    private GameObject[] instantiatedAsteroidGroups;
+    private int asteroidPoolSize;
+    private int lastIndex;
+    private int randomIndex;
 
     public GameObject[] planets;
     private float planetTimer;
@@ -48,6 +53,20 @@ public class GameController : MonoBehaviour
         rotations[1] = Quaternion.AngleAxis(180, Vector3.up);
         rotations[2] = Quaternion.AngleAxis(180, Vector3.right);
         rotations[3] = Quaternion.AngleAxis(180, Vector3.forward);
+
+        asteroidPoolPosition = new Vector2(-15.0f, -15.0f);
+        asteroidPoolSize = asteroidGroups.Length * rotations.Length;
+        instantiatedAsteroidGroups = new GameObject[asteroidPoolSize];
+        int k = 0;
+        for (int i = 0; i < asteroidGroups.Length; i++)
+        {
+            for (int j = 0; j < rotations.Length; j++)
+            {
+                instantiatedAsteroidGroups[k] = (GameObject)Instantiate(asteroidGroups[i], asteroidPoolPosition, rotations[j]);
+                instantiatedAsteroidGroups[k].SetActive(false);
+                k++;
+            }
+        }
 
         ship = GameObject.Find("myShip");
     }
@@ -87,7 +106,15 @@ public class GameController : MonoBehaviour
             else
             {
                 var position = new Vector2(0.0f, 6.4f);
-                Instantiate(asteroids[Random.Range(0, asteroids.Length)], position, rotations[Random.Range(0, rotations.Length)]);
+                lastIndex = randomIndex;
+                randomIndex = Random.Range(0, asteroidPoolSize);
+                while (randomIndex == lastIndex)
+                {
+                    randomIndex = Random.Range(0, asteroidPoolSize);
+                }
+                instantiatedAsteroidGroups[randomIndex].transform.position = position;
+                instantiatedAsteroidGroups[randomIndex].SetActive(true);
+                instantiatedAsteroidGroups[randomIndex].GetComponent<AsteroidGroup>().Reset();
                 asteroidTimer = asteroidTimeToSpawn;
             }
             asteroidTimeToSpawn = asteroidStartingTimeToSpawn / speedFactor;
