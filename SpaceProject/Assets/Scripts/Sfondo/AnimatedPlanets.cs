@@ -25,7 +25,7 @@ public class AnimatedPlanets : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                this.gameObject.SetActive(false);
             }
             speed = startingSpeed * GameController.speedFactor;
         }

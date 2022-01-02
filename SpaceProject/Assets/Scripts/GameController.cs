@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     private float asteroidTimer;
     private float asteroidStartingTimeToSpawn = 7.0f;
     private float asteroidTimeToSpawn;
+    private Vector2 asteroidSpawnPosition;
     private Quaternion[] rotations;
     private Vector2 asteroidPoolPosition;
     private GameObject[] instantiatedAsteroidGroups;
@@ -21,6 +22,8 @@ public class GameController : MonoBehaviour
     private float planetTimer;
     private float planetTimeToSpawn = 0.0f;
     private int planetsIndex = 0;
+    private Vector2 planetPoolPosition;
+    private Vector2 planetSpawnPosition;
 
     public float gameTime;
     public static float speedFactor;
@@ -67,6 +70,14 @@ public class GameController : MonoBehaviour
                 k++;
             }
         }
+        asteroidSpawnPosition = new Vector2(0.0f, 6.4f);
+
+        planetPoolPosition = new Vector2(15.0f, -15.0f);
+        for (int i = 0; i < planets.Length; i++)
+        {
+            planets[i] = (GameObject)Instantiate(planets[i], planetPoolPosition, Quaternion.identity);
+            planets[i].SetActive(false);
+        }
 
         ship = GameObject.Find("myShip");
     }
@@ -105,14 +116,13 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                var position = new Vector2(0.0f, 6.4f);
                 lastIndex = randomIndex;
                 randomIndex = Random.Range(0, asteroidPoolSize);
                 while (randomIndex == lastIndex)
                 {
                     randomIndex = Random.Range(0, asteroidPoolSize);
                 }
-                instantiatedAsteroidGroups[randomIndex].transform.position = position;
+                instantiatedAsteroidGroups[randomIndex].transform.position = asteroidSpawnPosition;
                 instantiatedAsteroidGroups[randomIndex].SetActive(true);
                 instantiatedAsteroidGroups[randomIndex].GetComponent<AsteroidGroup>().Reset();
                 asteroidTimer = asteroidTimeToSpawn;
@@ -125,8 +135,9 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                var position = new Vector2(Random.Range(-1.7f, 1.7f), 4.0f);
-                Instantiate(planets[planetsIndex], position, Quaternion.identity);
+                planetSpawnPosition = new Vector2(Random.Range(-1.7f, 1.7f), 4.0f);
+                planets[planetsIndex].transform.position = planetSpawnPosition;
+                planets[planetsIndex].SetActive(true);
                 planetsIndex++;
                 planetTimeToSpawn += 20.0f;
                 if (planetsIndex >= planets.Length)
