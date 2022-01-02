@@ -19,7 +19,7 @@ public class TouchInput : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Input.touchCount > 0)
         {
