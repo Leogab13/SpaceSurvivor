@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    float timer = 2.0f;
+    float time = 2.0f;
+    float timer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = time;
     }
 
     // Update is called once per frame
@@ -20,7 +21,8 @@ public class Explosion : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            this.gameObject.SetActive(false);
+            timer = time;
         }
     }
 }

@@ -25,6 +25,11 @@ public class GameController : MonoBehaviour
     private Vector2 planetPoolPosition;
     private Vector2 planetSpawnPosition;
 
+    public GameObject explosion;
+    public static GameObject[] explosions;
+    private Vector2 explosionsPoolPosition;
+    public static int explosionIndex;
+
     public float gameTime;
     public static float speedFactor;
     private float speedFactorMax = 4.0f;
@@ -77,6 +82,15 @@ public class GameController : MonoBehaviour
         {
             planets[i] = (GameObject)Instantiate(planets[i], planetPoolPosition, Quaternion.identity);
             planets[i].SetActive(false);
+        }
+
+        explosions = new GameObject[10];
+        explosionIndex = 0;
+        explosionsPoolPosition = new Vector2(20.0f, -15.0f);
+        for (int i = 0; i < explosions.Length; i++)
+        {
+            explosions[i] = (GameObject)Instantiate(explosion, explosionsPoolPosition, Quaternion.identity);
+            explosions[i].SetActive(false);
         }
 
         ship = GameObject.Find("myShip");

@@ -21,11 +21,11 @@ public class ShipController : MonoBehaviour
 
     float asseX;
 
-    public GameObject explosion;
-
     private GameObject shield;
     private bool shieldActive;
     private bool tempShieldActive;
+
+    private Vector2 shipPosition;
 
     public int life;   // 3 vite a partita , viene decrementato di 1 ad ogni collisione , a 0=gameover , uso life anche per gestire la healthbar
 
@@ -52,6 +52,7 @@ public class ShipController : MonoBehaviour
         shield = this.transform.Find("shield").gameObject;
         shield.SetActive(false);
         shieldActive = false;
+
     }
 
     void FixedUpdate()      //con il fixed update controllo i movimenti della nave
@@ -145,7 +146,14 @@ public class ShipController : MonoBehaviour
         }
         if (collision.name.Contains("Asteroid") && !shieldActive)
         {
-            Instantiate(explosion, transform.position, Quaternion.identity);
+            shipPosition = this.transform.position;
+            GameController.explosions[GameController.explosionIndex].transform.position = shipPosition;
+            GameController.explosions[GameController.explosionIndex].SetActive(true);
+            GameController.explosionIndex++;
+            if (GameController.explosionIndex >= GameController.explosions.Length)
+            {
+                GameController.explosionIndex = 0;
+            }
             collision.gameObject.SetActive(false);
           
             life--;    //decremento di 1 la vita

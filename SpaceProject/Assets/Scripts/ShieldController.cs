@@ -6,8 +6,9 @@ public class ShieldController : MonoBehaviour
 {
     public static float totalTime = 13.0f;
     public static float timer;
-    public GameObject explosion;
     private GameObject shieldSFX;
+
+    private Vector2 shipPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,14 @@ public class ShieldController : MonoBehaviour
     {
         if (collision.name.Contains("Asteroid"))
         {
-            Instantiate(explosion, transform.position, Quaternion.identity);
+            shipPosition = this.transform.position;
+            GameController.explosions[GameController.explosionIndex].transform.position = shipPosition;
+            GameController.explosions[GameController.explosionIndex].SetActive(true);
+            GameController.explosionIndex++;
+            if (GameController.explosionIndex >= GameController.explosions.Length)
+            {
+                GameController.explosionIndex = 0;
+            }
             collision.gameObject.SetActive(false);
         }
     }
