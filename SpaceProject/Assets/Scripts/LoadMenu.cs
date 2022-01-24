@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Restart : MonoBehaviour
+
+public class LoadMenu : MonoBehaviour
 {
-    public void RestartGame()
+    public void LoadMenuFunction()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Gioco");
+        SceneManager.LoadScene("Menu");
     }
 }
