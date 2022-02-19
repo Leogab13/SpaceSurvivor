@@ -274,7 +274,6 @@ GameObject:
   - component: {fileID: 889858096}
   - component: {fileID: 889858095}
   - component: {fileID: 889858094}
-  - component: {fileID: 889858093}
   m_Layer: 5
   m_Name: Accedi
   m_TagString: Untagged
@@ -302,18 +301,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0000038147, y: 214}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &889858093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889858091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ef2155c53ab284292b5550ee0d9167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &889858094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +345,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 889858093}
+      - m_Target: {fileID: 2017659078}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: LoadLogin
         m_Mode: 1
@@ -420,7 +407,6 @@ GameObject:
   - component: {fileID: 1293400271}
   - component: {fileID: 1293400270}
   - component: {fileID: 1293400269}
-  - component: {fileID: 1293400268}
   m_Layer: 5
   m_Name: Classifica
   m_TagString: Untagged
@@ -448,18 +434,6 @@ RectTransform:
   m_AnchoredPosition: {x: -4.55e-13, y: -87.3}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1293400268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1293400266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ef2155c53ab284292b5550ee0d9167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1293400269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +478,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1293400268}
+      - m_Target: {fileID: 2017659078}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: LoadLeaderboard
         m_Mode: 1
@@ -1066,6 +1040,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2017659077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2017659079}
+  - component: {fileID: 2017659078}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2017659078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017659077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ef2155c53ab284292b5550ee0d9167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2017659079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017659077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.775519, y: 0.86563987, z: 198.79532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2141030607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1095,6 @@ GameObject:
   - component: {fileID: 2141030611}
   - component: {fileID: 2141030610}
   - component: {fileID: 2141030609}
-  - component: {fileID: 2141030612}
   m_Layer: 5
   m_Name: NuovaPartita
   m_TagString: Untagged
@@ -1150,7 +1166,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2141030612}
+      - m_Target: {fileID: 2017659078}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
@@ -1200,15 +1216,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141030607}
   m_CullTransparentMesh: 1
---- !u!114 &2141030612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141030607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ef2155c53ab284292b5550ee0d9167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
