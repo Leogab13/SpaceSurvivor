@@ -1182,7 +1182,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.7529412, g: 0.14901961, b: 0.16078432, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1778,7 +1778,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0.94509804, g: 0.110521644, b: 0, a: 1}
+  m_fontColor: {r: 0.7529412, g: 0.14901961, b: 0.16078432, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5632,6 +5632,7 @@ MonoBehaviour:
   registerUI: {fileID: 329313309}
   MainMenuUI: {fileID: 1703856306}
   LeaderboardUI: {fileID: 1558694297}
+  UserDataUI: {fileID: 0}
 --- !u!4 &1977463820
 Transform:
   m_ObjectHideFlags: 0
@@ -5796,7 +5797,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 1784983690}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0

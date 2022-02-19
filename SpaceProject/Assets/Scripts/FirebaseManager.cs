@@ -2,9 +2,10 @@ using System.Collections;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
+using Firebase.Database;
 using TMPro;
 
-public class AuthManager : MonoBehaviour
+public class FirebaseManager : MonoBehaviour
 {
     //Firebase variables
     [Header("Firebase")]

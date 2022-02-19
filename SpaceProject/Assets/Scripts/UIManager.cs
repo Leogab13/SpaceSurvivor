@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject registerUI;
     public GameObject MainMenuUI;
     public GameObject LeaderboardUI;
+    public GameObject UserDataUI;
 
 
     private void Awake()
@@ -29,33 +30,38 @@ public class UIManager : MonoBehaviour
     }
 
     //Functions to change the login screen UI
-    public void LoginScreen() //Back button
+    public void ClearScreen()
     {
-        loginUI.SetActive(true);
+        loginUI.SetActive(false);
         registerUI.SetActive(false);
         MainMenuUI.SetActive(false);
         LeaderboardUI.SetActive(false);
+        UserDataUI.SetActive(false);
+    }
+    public void LoginScreen() //Back button
+    {
+        ClearScreen();
+        loginUI.SetActive(true);        
     }
     public void RegisterScreen() // Register button
     {
-        loginUI.SetActive(false);
+        ClearScreen();
         registerUI.SetActive(true);
-        MainMenuUI.SetActive(false);
-        LeaderboardUI.SetActive(false);
     }
     public void MainMenuScreen()
     {
-        loginUI.SetActive(false);
-        registerUI.SetActive(false);
-        MainMenuUI.SetActive(true);
-        LeaderboardUI.SetActive(false);
+        ClearScreen();
+        MainMenuUI.SetActive(true);        
     }
     public void LeaderboardScreen()
     {
-        loginUI.SetActive(false);
-        registerUI.SetActive(false);
-        MainMenuUI.SetActive(false);
+        ClearScreen();
         LeaderboardUI.SetActive(true);
+    }
+    public void UserDataScreen()
+    {
+        ClearScreen();
+        UserDataUI.SetActive(true);
     }
 
     public void PlayGame()
