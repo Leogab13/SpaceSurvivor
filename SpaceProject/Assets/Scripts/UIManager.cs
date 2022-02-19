@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class UIManager : MonoBehaviour
     //Screen object variables
     public GameObject loginUI;
     public GameObject registerUI;
+    public GameObject MainMenuUI;
+    public GameObject LeaderboardUI;
+
 
     private void Awake()
     {
@@ -28,10 +33,34 @@ public class UIManager : MonoBehaviour
     {
         loginUI.SetActive(true);
         registerUI.SetActive(false);
+        MainMenuUI.SetActive(false);
+        LeaderboardUI.SetActive(false);
     }
     public void RegisterScreen() // Register button
     {
         loginUI.SetActive(false);
         registerUI.SetActive(true);
+        MainMenuUI.SetActive(false);
+        LeaderboardUI.SetActive(false);
     }
+    public void MainMenuScreen()
+    {
+        loginUI.SetActive(false);
+        registerUI.SetActive(false);
+        MainMenuUI.SetActive(true);
+        LeaderboardUI.SetActive(false);
+    }
+    public void LeaderboardScreen()
+    {
+        loginUI.SetActive(false);
+        registerUI.SetActive(false);
+        MainMenuUI.SetActive(false);
+        LeaderboardUI.SetActive(true);
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("Gioco");
+    }
+
 }
