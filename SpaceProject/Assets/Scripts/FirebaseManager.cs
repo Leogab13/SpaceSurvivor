@@ -261,7 +261,6 @@ public class FirebaseManager : MonoBehaviour
     {
         //Get the currently logged in user data
         var DBTask = DBreference.Child("users").Child(user.UserId).GetValueAsync();
-
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
         if (DBTask.Exception != null)
@@ -277,8 +276,17 @@ public class FirebaseManager : MonoBehaviour
         {
             //Data has been retrieved
             DataSnapshot snapshot = DBTask.Result;
-
-            scoreText.text = snapshot.Child("score").Value.ToString();            
+            if (!snapshot.HasChild("score"))
+            {
+                Debug.Log("if");
+                //no score exists yet
+                scoreText.text = "0";
+            }
+            else
+            {
+                Debug.Log("else");
+                scoreText.text = snapshot.Child("score").Value.ToString();
+            }
         }
     }
     private IEnumerator UpdateUsernameAuth(string _username)
