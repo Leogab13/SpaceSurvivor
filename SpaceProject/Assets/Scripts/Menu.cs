@@ -8,5 +8,15 @@ public class Menu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Gioco");
-    }    
+    }
+
+    public void LoadLogin()
+    {
+        SceneManager.LoadScene("Login");
+    }
+
+    public void LoadLeaderboard()
+    {
+        SceneManager.LoadScene("Leaderboard");
+    }
 }

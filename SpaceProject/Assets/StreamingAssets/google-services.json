@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "16690470992",
+    "firebase_url": "https://spacesurvivor-6ca91-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "spacesurvivor-6ca91",
+    "storage_bucket": "spacesurvivor-6ca91.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16690470992:android:927e0ff10f3b20891db155",
+        "android_client_info": {
+          "package_name": "com.SpaceSurvivor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16690470992-ld1u8eh0lcjivcj425tp7k0fu178bbfa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvJrrAQtx7MZH8necz5JdCDJtUC89VTEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16690470992-ld1u8eh0lcjivcj425tp7k0fu178bbfa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
