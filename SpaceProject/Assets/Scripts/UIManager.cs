@@ -68,5 +68,4 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Gioco");
     }
-
 }
