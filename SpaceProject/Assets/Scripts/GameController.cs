@@ -89,9 +89,9 @@ public class GameController : MonoBehaviour
 
         ship = GameObject.Find("myShip");
 
-        user = FirebaseReference.user;
-        DBreference = FirebaseReference.DBreference;
-        LoadHighScore();
+        //user = FirebaseReference.user;
+        //DBreference = FirebaseReference.DBreference;
+        //LoadHighScore();
     }
 
     // Update is called once per frame
@@ -180,9 +180,10 @@ public class GameController : MonoBehaviour
             audioSource.Play();
 
             processedDeath = true;
-            if (Punteggio.score > highScore)
-            {
-                //UpdateHighScore(Punteggio.score);
+            int newScore = Punteggio.score;
+            if (newScore > highScore)
+            {               
+                //UpdateHighScore(newScore);
             }
         }
     }
@@ -236,7 +237,7 @@ public class GameController : MonoBehaviour
             planetTimer = planetTimeToSpawn;
         }
     }
-    private IEnumerator LoadHighScore()
+    /*private IEnumerator LoadHighScore()
     {
         //Get the currently logged in user data
         var DBTask = DBreference.Child("users").Child(user.UserId).GetValueAsync();
@@ -249,7 +250,7 @@ public class GameController : MonoBehaviour
         else if (DBTask.Result.Value == null)
         {
             //No data exists yet
-            highScore = 0;
+            highScore = -1;
         }
         else
         {
@@ -266,8 +267,19 @@ public class GameController : MonoBehaviour
             }
         }
     }
-    /*private IEnumerator UpdateHighScore(int newScore)
-    {
+    private IEnumerator UpdateHighScore(int _newScore)
+    {        
+        var DBTask = DBreference.Child("users").Child(user.UserId).Child("score").SetValueAsync(_newScore);
 
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Score is now updated
+        }
     }*/
 }

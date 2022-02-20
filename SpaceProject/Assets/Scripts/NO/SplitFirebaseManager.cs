@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
@@ -7,37 +7,28 @@ using TMPro;
 
 public class FirebaseManager : MonoBehaviour
 {
+    public static FirebaseManager instance;
+
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
-    public static FirebaseAuth auth;
-    public static FirebaseUser user;
-    public static DatabaseReference DBreference;
+    public FirebaseAuth auth;
+    public FirebaseUser user;
+    public DatabaseReference DBreference;
 
-    //Login variables
-    [Header("Login")]
-    public TMP_InputField emailLoginField;
-    public TMP_InputField passwordLoginField;
-    public TMP_Text warningLoginText;
-    public TMP_Text confirmLoginText;
-
-    //Register variables
-    [Header("Register")]
-    public TMP_InputField usernameRegisterField;
-    public TMP_InputField emailRegisterField;
-    public TMP_InputField passwordRegisterField;
-    public TMP_InputField passwordRegisterVerifyField;
-    public TMP_Text warningRegisterText;
-
-    //User Data variables
-    [Header("UserData")]
-    public TMP_InputField usernameField;
-    public TMP_Text scoreText;
-    public GameObject scoreElement;
-    public Transform scoreboardContent;
+    
 
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != null)
+        {
+            Debug.Log("Instance already exists, destroying object!");
+            Destroy(this);
+        }
         //Check that all of the necessary dependencies for Firebase are present on the system
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
@@ -62,63 +53,9 @@ public class FirebaseManager : MonoBehaviour
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
-    public void ClearLoginFields()
-    {
-        emailLoginField.text = "";
-        passwordLoginField.text = "";
-    }
-    public void ClearRegisterFields()
-    {
-        usernameRegisterField.text = "";
-        emailRegisterField.text = "";
-        passwordRegisterField.text = "";
-        passwordRegisterVerifyField.text = "";
-    }
+    
 
-    public void MenuLoginButton()
-    {
-        if (user == null)
-        {
-            UIManager.instance.LoginScreen();
-        }
-        else
-        {
-            StartCoroutine(LoadUserData());
-
-            usernameField.text = user.DisplayName;
-            UIManager.instance.UserDataScreen(); // Change to user data UI
-        }
-    }
-
-    //Function for the login button
-    public void LoginButton()
-    {
-        //Call the login coroutine passing the email and password
-        StartCoroutine(Login(emailLoginField.text, passwordLoginField.text));
-    }
-    //Function for the register button
-    public void RegisterButton()
-    {
-        //Call the register coroutine passing the email, password, and username
-        StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text, usernameRegisterField.text));
-    }
-    public void SignOutButton()
-    {
-        auth.SignOut();
-        user = null;
-        UIManager.instance.LoginScreen();
-        ClearRegisterFields();
-        ClearLoginFields();
-        //FirebaseReference.UpdateData();
-    }
-    //Function for the change username button
-    public void ChangeUsernameButton()
-    {
-        StartCoroutine(UpdateUsernameAuth(usernameField.text));
-        StartCoroutine(UpdateUsernameDatabase(usernameField.text));
-    }
-
-    private IEnumerator Login(string _email, string _password)
+    public IEnumerator Login(string _email, string _password)
     {
         //Call the Firebase auth signin function passing the email and password
         var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
@@ -151,7 +88,7 @@ public class FirebaseManager : MonoBehaviour
                     message = "Account does not exist";
                     break;
             }
-            warningLoginText.text = message;
+            Menu.DisplayWarningLoginText(message);
         }
         else
         {
@@ -159,32 +96,31 @@ public class FirebaseManager : MonoBehaviour
             //Now get the result
             user = LoginTask.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})", user.DisplayName, user.Email);
-            warningLoginText.text = "";
-            confirmLoginText.text = "Logged In";
+            Menu.DisplayWarningLoginText("");
+            Menu.DisplayConfirmLoginText("Logged In");
             StartCoroutine(LoadUserData());
 
             yield return new WaitForSeconds(1);
 
-            usernameField.text = user.DisplayName;
+            Menu.DisplayUsernameField(user.DisplayName);
             UIManager.instance.UserDataScreen(); // Change to user data UI
-            confirmLoginText.text = "";
-            ClearLoginFields();
-            ClearRegisterFields();
-            //FirebaseReference.UpdateData();
+            DisplayConfirmLoginText("");
+            Menu.ClearLoginFields();
+            Menu.ClearRegisterFields();
         }
     }
 
-    private IEnumerator Register(string _email, string _password, string _username)
+    public IEnumerator Register(string _email, string _password, string _username)
     {
         if (_username == "")
         {
             //If the username field is blank show a warning
-            warningRegisterText.text = "Missing Username";
+            Menu.DisplayWarningRegisterText("Missing Username");
         }
-        else if (passwordRegisterField.text != passwordRegisterVerifyField.text)
+        else if (Menu.passwordRegisterField.text != Menu.passwordRegisterVerifyField.text)
         {
             //If the password does not match show a warning
-            warningRegisterText.text = "Password Does Not Match!";
+            Menu.DisplayWarningRegisterText("Password Does Not Match!");
         }
         else
         {
@@ -216,7 +152,7 @@ public class FirebaseManager : MonoBehaviour
                         message = "Email Already In Use";
                         break;
                 }
-                warningRegisterText.text = message;
+                Menu.DisplayWarningRegisterText(message);
             }
             else
             {
@@ -240,7 +176,7 @@ public class FirebaseManager : MonoBehaviour
                         Debug.LogWarning(message: $"Failed to register task with {ProfileTask.Exception}");
                         FirebaseException firebaseEx = ProfileTask.Exception.GetBaseException() as FirebaseException;
                         AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
-                        warningRegisterText.text = "Username Set Failed!";
+                        Menu.DisplayWarningRegisterText("Username Set Failed!");
                     }
                     else
                     {
@@ -248,17 +184,16 @@ public class FirebaseManager : MonoBehaviour
                         //Now return to login screen
                         StartCoroutine(UpdateUsernameDatabase(_username));
                         UIManager.instance.LoginScreen();
-                        warningRegisterText.text = "";
-                        ClearRegisterFields();
-                        ClearLoginFields();
-                        //FirebaseReference.UpdateData();
+                        Menu.DisplayWarningRegisterText("");
+                        Menu.ClearRegisterFields();
+                        Menu.ClearLoginFields();
                     }
                 }
             }
         }
     }
-
-    private IEnumerator LoadUserData()
+    
+    public IEnumerator LoadUserData()
     {
         //Get the currently logged in user data
         var DBTask = DBreference.Child("users").Child(user.UserId).GetValueAsync();
@@ -271,7 +206,7 @@ public class FirebaseManager : MonoBehaviour
         else if (DBTask.Result.Value == null)
         {
             //No data exists yet
-            scoreText.text = "0";            
+            Menu.DisplayScoreText("0");           
         }
         else
         {
@@ -280,15 +215,15 @@ public class FirebaseManager : MonoBehaviour
             if (!snapshot.HasChild("score"))
             {
                 //no score exists yet
-                scoreText.text = "0";
+                Menu.DisplayScoreText("0");
             }
             else
             {
-                scoreText.text = snapshot.Child("score").Value.ToString();
+                Menu.DisplayScoreText(snapshot.Child("score").Value.ToString());           
             }
         }
     }
-    private IEnumerator UpdateUsernameAuth(string _username)
+    public IEnumerator UpdateUsernameAuth(string _username)
     {
         //Create a user profile and set the username
         UserProfile profile = new UserProfile { DisplayName = _username };
@@ -308,7 +243,7 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    private IEnumerator UpdateUsernameDatabase(string _username)
+    public IEnumerator UpdateUsernameDatabase(string _username)
     {
         //Set the currently logged in user username in the database        
         var DBTask = DBreference.Child("users").Child(user.UserId).Child("username").SetValueAsync(_username);
@@ -324,4 +259,4 @@ public class FirebaseManager : MonoBehaviour
             //Database username is now updated
         }
     }
-}
+}*/
