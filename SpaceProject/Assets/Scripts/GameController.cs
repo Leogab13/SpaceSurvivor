@@ -89,9 +89,9 @@ public class GameController : MonoBehaviour
 
         ship = GameObject.Find("myShip");
 
-        user = FirebaseReference.user;
-        DBreference = FirebaseReference.DBreference;
-        LoadHighScore();
+        user = GameFirebaseManager.user;
+        DBreference = GameFirebaseManager.DBreference;
+        StartCoroutine(LoadHighScore());
     }
 
     // Update is called once per frame
@@ -180,9 +180,10 @@ public class GameController : MonoBehaviour
             audioSource.Play();
 
             processedDeath = true;
-            if (Punteggio.score > highScore)
+            int newScore = Punteggio.score;
+            if (newScore > highScore)
             {
-                //UpdateHighScore(Punteggio.score);
+                StartCoroutine(UpdateHighScore(newScore));
             }
         }
     }
@@ -266,8 +267,17 @@ public class GameController : MonoBehaviour
             }
         }
     }
-    /*private IEnumerator UpdateHighScore(int newScore)
+    private IEnumerator UpdateHighScore(int _newScore)
     {
-
-    }*/
+        var DBTask = DBreference.Child("users").Child(user.UserId).Child("score").SetValueAsync(_newScore);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Score is now updated
+        }
+    }
 }

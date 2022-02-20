@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
@@ -37,4 +37,4 @@ public class FirebaseReference : MonoBehaviour
         user = FirebaseManager.user;
         DBreference = FirebaseManager.DBreference;
     }
-}
+}*/

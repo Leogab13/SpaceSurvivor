@@ -62,12 +62,12 @@ public class FirebaseManager : MonoBehaviour
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
-    public void ClearLoginFeilds()
+    public void ClearLoginFields()
     {
         emailLoginField.text = "";
         passwordLoginField.text = "";
     }
-    public void ClearRegisterFeilds()
+    public void ClearRegisterFields()
     {
         usernameRegisterField.text = "";
         emailRegisterField.text = "";
@@ -107,9 +107,8 @@ public class FirebaseManager : MonoBehaviour
         auth.SignOut();
         user = null;
         UIManager.instance.LoginScreen();
-        ClearRegisterFeilds();
-        ClearLoginFeilds();
-        FirebaseReference.UpdateData();
+        ClearRegisterFields();
+        ClearLoginFields();
     }
     //Function for the change username button
     public void ChangeUsernameButton()
@@ -168,9 +167,8 @@ public class FirebaseManager : MonoBehaviour
             usernameField.text = user.DisplayName;
             UIManager.instance.UserDataScreen(); // Change to user data UI
             confirmLoginText.text = "";
-            ClearLoginFeilds();
-            ClearRegisterFeilds();
-            FirebaseReference.UpdateData();
+            ClearLoginFields();
+            ClearRegisterFields();
         }
     }
 
@@ -248,9 +246,8 @@ public class FirebaseManager : MonoBehaviour
                         //Now return to login screen
                         UIManager.instance.LoginScreen();
                         warningRegisterText.text = "";
-                        ClearRegisterFeilds();
-                        ClearLoginFeilds();
-                        FirebaseReference.UpdateData();
+                        ClearRegisterFields();
+                        ClearLoginFields();
                     }
                 }
             }
