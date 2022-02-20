@@ -278,13 +278,11 @@ public class FirebaseManager : MonoBehaviour
             DataSnapshot snapshot = DBTask.Result;
             if (!snapshot.HasChild("score"))
             {
-                Debug.Log("if");
                 //no score exists yet
                 scoreText.text = "0";
             }
             else
             {
-                Debug.Log("else");
                 scoreText.text = snapshot.Child("score").Value.ToString();
             }
         }
