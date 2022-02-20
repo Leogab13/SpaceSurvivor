@@ -136,13 +136,13 @@ public class ShipController : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
             audioSource.PlayOneShot(coinSound);
-            punteggio.score = punteggio.score + 2000;
+            Punteggio.score = Punteggio.score + 2000;
         }
         if (collision.name.Contains("Redcoin"))
         {
             collision.gameObject.SetActive(false);
             audioSource.PlayOneShot(coinSound);
-            punteggio.score = punteggio.score + 10000;
+            Punteggio.score = Punteggio.score + 10000;
         }
         if (collision.name.Contains("Asteroid") && !shieldActive)
         {

@@ -13,7 +13,7 @@ public class prendiMonete : MonoBehaviour
         if (collision.name.Contains("Coin"))
         {
             collision.gameObject.SetActive(false);
-            punteggio.score = punteggio.score + 2000;
+            Punteggio.score = Punteggio.score + 2000;
         }
 
     }

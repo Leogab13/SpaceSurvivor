@@ -457,7 +457,6 @@ GameObject:
   - component: {fileID: 256164542}
   - component: {fileID: 256164541}
   - component: {fileID: 256164540}
-  - component: {fileID: 256164539}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -485,18 +484,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &256164539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256164537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffdca027be5b53c4b866b8aea88010c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &256164540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,8 +528,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 256164539}
-        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
+      - m_Target: {fileID: 1961226393}
+        m_TargetAssemblyTypeName: UIManagerGame, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -603,7 +590,6 @@ GameObject:
   - component: {fileID: 283591586}
   - component: {fileID: 283591585}
   - component: {fileID: 283591584}
-  - component: {fileID: 283591583}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -631,21 +617,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 305}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &283591583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283591581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a99182141fec747b7239d7a7edb88a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseButton: {fileID: 305864124}
-  restartButton: {fileID: 256164537}
-  menuButton: {fileID: 1060149520}
 --- !u!114 &283591584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,8 +661,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 283591583}
-        m_TargetAssemblyTypeName: Resume, Assembly-CSharp
+      - m_Target: {fileID: 1961226393}
+        m_TargetAssemblyTypeName: UIManagerGame, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -752,7 +723,6 @@ GameObject:
   - component: {fileID: 305864127}
   - component: {fileID: 305864126}
   - component: {fileID: 305864128}
-  - component: {fileID: 305864129}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -823,8 +793,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 305864129}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+      - m_Target: {fileID: 1961226393}
+        m_TargetAssemblyTypeName: UIManagerGame, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
@@ -873,21 +843,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &305864129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305864124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f130bfa5652e7f4a9491a5508ec7e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resumeButton: {fileID: 283591581}
-  restartButton: {fileID: 256164537}
-  menuButton: {fileID: 1060149520}
 --- !u!1 &308919122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,7 +1229,6 @@ GameObject:
   - component: {fileID: 676440125}
   - component: {fileID: 676440124}
   - component: {fileID: 676440123}
-  - component: {fileID: 676440122}
   m_Layer: 5
   m_Name: RestartOver
   m_TagString: Untagged
@@ -1302,18 +1256,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &676440122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676440120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffdca027be5b53c4b866b8aea88010c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &676440123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1358,8 +1300,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 676440122}
-        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
+      - m_Target: {fileID: 1961226393}
+        m_TargetAssemblyTypeName: UIManagerGame, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -1515,7 +1457,6 @@ GameObject:
   - component: {fileID: 779077448}
   - component: {fileID: 779077447}
   - component: {fileID: 779077446}
-  - component: {fileID: 779077445}
   m_Layer: 5
   m_Name: MenuOver
   m_TagString: Untagged
@@ -1543,18 +1484,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &779077445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779077443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef282199de39df4f81ca600f34ac7c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &779077446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1599,9 +1528,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 779077445}
-        m_TargetAssemblyTypeName: LoadMenu, Assembly-CSharp
-        m_MethodName: LoadMenuFunction
+      - m_Target: {fileID: 1961226393}
+        m_TargetAssemblyTypeName: UIManagerGame, Assembly-CSharp
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1947,11 +1876,11 @@ MonoBehaviour:
   - {fileID: 1667566195352970459, guid: 08536e478652b0b43ad55d12b65d4825, type: 3}
   - {fileID: 3816282107766219095, guid: a3086809516e1f84b89b7612694ec210, type: 3}
   explosion: {fileID: 9078237684683626750, guid: 49d1881f386ceb048bfbb9fe8f4e04b4, type: 3}
-  gameTime: 0
   speedFactorTest: 0
   gameOver: {fileID: 798754835}
   RestartOver: {fileID: 676440120}
   MenuOver: {fileID: 779077443}
+  Pause: {fileID: 305864124}
 --- !u!4 &888386633
 Transform:
   m_ObjectHideFlags: 0
@@ -2192,9 +2121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1060149522}
-        m_TargetAssemblyTypeName: LoadMenu, Assembly-CSharp
-        m_MethodName: LoadMenuFunction
+      - m_Target: {fileID: 1961226393}
+        m_TargetAssemblyTypeName: UIManagerGame, Assembly-CSharp
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3250,6 +3179,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951831646}
   m_CullTransparentMesh: 1
+--- !u!1 &1961226392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961226394}
+  - component: {fileID: 1961226393}
+  m_Layer: 0
+  m_Name: UIManagerGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1961226393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961226392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5636150f3d344b347a147d361c906894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseButton: {fileID: 305864124}
+  restartButton: {fileID: 256164537}
+  menuButton: {fileID: 1060149520}
+  resumeButton: {fileID: 283591581}
+--- !u!4 &1961226394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961226392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2169006, y: -0.17652403, z: 91.71604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2046125052
 GameObject:
   m_ObjectHideFlags: 0

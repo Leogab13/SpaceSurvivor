@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movePlanets : MonoBehaviour
+public class MovePlanets : MonoBehaviour
 {
     private float startingSpeed = 0.4f;
     private float speed;
