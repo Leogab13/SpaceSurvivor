@@ -37,7 +37,9 @@ public class GameController : MonoBehaviour
 
     private GameObject ship;
 
-    public GameObject gameOver;         //la sprite della scritta GAME OVER
+    public GameObject gameOver;         //la sprite della scritta GAME OVER                                       
+    public GameObject RestartOver;      //la sprite della scritta Ricomincia
+    public GameObject MenuOver;         //la sprite della scritta Menù
     public static bool partita;  //gestione della partita, true=vivo false=gameover
     private bool processedDeath;     //se ho già verificato la morte
 
@@ -103,6 +105,8 @@ public class GameController : MonoBehaviour
         if (ShipController.dead && !processedDeath)
         {
             gameOver.SetActive(true);      //gameover
+            RestartOver.SetActive(true);   //Ricomincia
+            MenuOver.SetActive(true);      //Menù
 
             ship.gameObject.SetActive(false); //faccio scomparire la nave
             partita = false;                  //fermo tutti gli oggetti mobili
