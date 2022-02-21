@@ -53,7 +53,8 @@ public class UIManagerGame : MonoBehaviour
         restartButton.gameObject.SetActive(false);
         menuButton.gameObject.SetActive(false);
         resumeButton.gameObject.SetActive(false); pauseButton.gameObject.SetActive(true);        
-        Time.timeScale = 1;       
+        Time.timeScale = 1;
+        Soundtrack.instance.UnPause();
     }
     public void RestartGame()
     {
@@ -63,6 +64,7 @@ public class UIManagerGame : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        Soundtrack.instance.Pause();
         recordTitle.gameObject.SetActive(true);
         record.gameObject.SetActive(true);
         pauseButton.gameObject.SetActive(false);
