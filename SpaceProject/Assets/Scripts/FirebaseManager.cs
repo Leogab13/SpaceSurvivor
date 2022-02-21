@@ -255,7 +255,9 @@ public class FirebaseManager : MonoBehaviour
                     {
                         //Username is now set
                         //Now return to login screen
-                        UIManager.instance.LoginScreen();
+                        StartCoroutine(UpdateUsernameDatabase(_username));
+                        StartCoroutine(LoadUserData());
+                        UIManager.instance.UserDataScreen();
                         warningRegisterText.text = "";
                         ClearRegisterFields();
                         ClearLoginFields();
@@ -292,6 +294,15 @@ public class FirebaseManager : MonoBehaviour
             else
             {
                 scoreText.text = snapshot.Child("score").Value.ToString();
+            }
+            if (!snapshot.HasChild("username"))
+            {
+                //no score exists yet
+                usernameField.text = "";
+            }
+            else
+            {
+                usernameField.text = snapshot.Child("username").Value.ToString();
             }
         }
     }
