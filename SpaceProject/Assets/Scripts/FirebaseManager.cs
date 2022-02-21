@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
@@ -33,8 +35,10 @@ public class FirebaseManager : MonoBehaviour
     [Header("UserData")]
     public TMP_InputField usernameField;
     public TMP_Text scoreText;
-    public GameObject scoreElement;
-    public Transform scoreboardContent;
+
+    //Leaderboard variables
+    [Header("Leaderboard")]
+    public Transform leaderboardRows;
 
     void Awake()
     {
@@ -115,6 +119,13 @@ public class FirebaseManager : MonoBehaviour
     {
         StartCoroutine(UpdateUsernameAuth(usernameField.text));
         StartCoroutine(UpdateUsernameDatabase(usernameField.text));
+    }
+    //Function for the leaderboard button
+    public void LeaderboardButton()
+    {
+        StartCoroutine(LoadLeaderboardData());
+        //Go to scoareboard screen
+        UIManager.instance.LeaderboardScreen();
     }
 
     private IEnumerator Login(string _email, string _password)
@@ -320,5 +331,133 @@ public class FirebaseManager : MonoBehaviour
             //Database username is now updated
         }
     }
+
+    /*private IEnumerator LoadLeaderboardData()
+    {
+        //Get all the users data ordered by score
+        var DBTask = DBreference.Child("users").OrderByChild("score").GetValueAsync();
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Data has been retrieved
+            DataSnapshot snapshot = DBTask.Result;
+
+            //Reset the leaderboard
+            foreach (Transform row in leaderboardRows.transform)
+            {
+                foreach (Transform field in row.transform)
+                {
+                    TMP_Text textField = field.GetComponent<TMP_Text>();
+                    textField.text = "";
+                }
+            }
+
+            //SortedList<int, string> leaderboardScores = new SortedList<int, string>(new InvertedComparer());
+            //SortedList <int, string> leaderboardScores = new SortedList <int, string>();
+            SortedList leaderboardScores = new SortedList();
+            //Loop through every users UID
+            foreach (DataSnapshot childSnapshot in snapshot.Children)
+            {
+                string username = childSnapshot.Child("username").Value.ToString();
+                int score = int.Parse(childSnapshot.Child("score").Value.ToString());
+                leaderboardScores.Add(score, username);
+            }
+            for (int i = 0; i < leaderboardRows.transform.childCount && i < leaderboardScores.Count; i++)
+            {
+                Transform row = leaderboardRows.transform.GetChild(i);
+                TMP_Text usernameField = row.transform.GetChild(0).GetComponent<TMP_Text>();
+                TMP_Text scoreField = row.transform.GetChild(1).GetComponent<TMP_Text>();
+                usernameField.text = leaderboardScores.GetByIndex(i).ToString();
+                scoreField.text = leaderboardScores.GetKey(i).ToString();
+            }
+        }
+    }*/
+
+    private IEnumerator LoadLeaderboardData()
+    {
+        var DBTask = DBreference.Child("users").GetValueAsync();
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Data has been retrieved
+            DataSnapshot snapshot = DBTask.Result;
+
+            //Reset the leaderboard
+            foreach (Transform row in leaderboardRows.transform)
+            {
+                foreach (Transform field in row.transform)
+                {
+                    TMP_Text textField = field.GetComponent<TMP_Text>();
+                    textField.text = "";
+                }
+            }
+            List<Row> leaderboardScores = new List<Row>();
+            //Loop through every users UID
+            foreach (DataSnapshot childSnapshot in snapshot.Children)
+            {
+                string username = childSnapshot.Child("username").Value.ToString();
+                int score = int.Parse(childSnapshot.Child("score").Value.ToString());
+                leaderboardScores.Add(new Row(username, score));
+            }
+            leaderboardScores.Sort();
+            for (int i = 0; i < leaderboardRows.transform.childCount && i < leaderboardScores.Count; i++)
+            {
+                Transform row = leaderboardRows.transform.GetChild(i);
+                TMP_Text usernameField = row.transform.GetChild(0).GetComponent<TMP_Text>();
+                TMP_Text scoreField = row.transform.GetChild(1).GetComponent<TMP_Text>();
+                usernameField.text = leaderboardScores[i].getUsername();
+                scoreField.text = leaderboardScores[i].getScore().ToString();
+            }
+        }
+    }
+
+    private class Row : IComparable
+    {
+        private string username;
+        private int score;
+        public Row(string _username, int _score)
+        {
+            username = _username;
+            score = _score;
+        }
+        public string getUsername()
+        {
+            return username;
+        }
+        public int getScore()
+        {
+            return score;
+        }
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            Row that = obj as Row;
+            if (that != null)
+                return that.getScore().CompareTo(score);
+            else
+                throw new ArgumentException("Object is not a Row");
+        }        
+    }
+
+    /*private class InvertedComparer : IComparer<int>
+    {
+        public int Compare(int x, int y)
+        {
+            return y.CompareTo(x);
+        }
+    }*/
 }
 
