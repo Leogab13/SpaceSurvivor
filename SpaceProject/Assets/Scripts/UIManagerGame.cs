@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIManagerGame : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class UIManagerGame : MonoBehaviour
     public GameObject restartButton;
     public GameObject menuButton;
     public GameObject resumeButton;
+    public GameObject recordTitle;
+    public TMP_Text record;
+
 
     private void Awake()
     {
@@ -34,8 +38,15 @@ public class UIManagerGame : MonoBehaviour
 
     }*/
 
+    private void Start()
+    {
+        record.text = GameController.highScore.ToString();
+    }
+
     public void ResumeGame()
     {
+        recordTitle.gameObject.SetActive(false);
+        record.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
         menuButton.gameObject.SetActive(false);
         resumeButton.gameObject.SetActive(false); pauseButton.gameObject.SetActive(true);        
@@ -49,6 +60,8 @@ public class UIManagerGame : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        recordTitle.gameObject.SetActive(true);
+        record.gameObject.SetActive(true);
         pauseButton.gameObject.SetActive(false);
         resumeButton.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);

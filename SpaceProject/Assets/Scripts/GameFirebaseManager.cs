@@ -40,7 +40,7 @@ public class GameFirebaseManager : MonoBehaviour
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
         user = auth.CurrentUser;
     }
-
+    //TODO Rimuovere le funzioni relative al menu da FirebaseManagere nella scena del menu e trasformarlo in un singleton con DontDestroyOnLoad per evitare la duplicazione del codice
 
 
 

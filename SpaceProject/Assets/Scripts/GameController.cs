@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
     public static bool partita;  //gestione della partita, true=vivo false=gameover
     private bool processedDeath;     //se ho già verificato la morte
 
-    public int highScore;
+    public static int highScore;
 
     //Firebase variables
     [Header("Firebase")]
@@ -91,7 +91,12 @@ public class GameController : MonoBehaviour
 
         user = GameFirebaseManager.user;
         DBreference = GameFirebaseManager.DBreference;
-        StartCoroutine(LoadHighScore());
+        if (user != null)
+        {
+            StartCoroutine(LoadHighScore());
+            Debug.Log(user.UserId.ToString());
+        }
+        else highScore = 0;
     }
 
     // Update is called once per frame
@@ -180,11 +185,14 @@ public class GameController : MonoBehaviour
             audioSource.Play();
 
             processedDeath = true;
-            int newScore = Punteggio.score;
-            if (newScore > highScore)
+            if (user != null)
             {
-                StartCoroutine(UpdateHighScore(newScore));
-            }
+                int newScore = Punteggio.score;
+                if (newScore > highScore)
+                {
+                    StartCoroutine(UpdateHighScore(newScore));
+                }
+            }               
         }
     }
     private void UpdateSpeedFactor()
@@ -256,16 +264,22 @@ public class GameController : MonoBehaviour
         {
             //Data has been retrieved
             DataSnapshot snapshot = DBTask.Result;
-            if (!snapshot.HasChild("score"))
+            bool hasScore = snapshot.HasChild("score");
+            if (!hasScore)
             {
                 //no score exists yet
                 highScore = 0;
             }
             else
             {
-                highScore = (int)snapshot.Child("score").Value;
+                if (snapshot.Child("score").Value != null)
+                {
+                    string score = (string)snapshot.Child("score").Value.ToString();
+                    highScore = int.Parse(score);
+                }
+                //highScore = (int)snapshot.Child("score").Value;
             }
-        }
+        }        
     }
     private IEnumerator UpdateHighScore(int _newScore)
     {
