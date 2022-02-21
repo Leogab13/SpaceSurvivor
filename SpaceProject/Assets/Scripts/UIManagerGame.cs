@@ -14,6 +14,9 @@ public class UIManagerGame : MonoBehaviour
     public GameObject resumeButton;
     public GameObject recordTitle;
     public TMP_Text record;
+    public GameObject restartButtonOver;
+    public GameObject menuButtonOver;
+    public GameObject gameOver;
 
 
     private void Awake()
@@ -72,6 +75,16 @@ public class UIManagerGame : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void GameOverScreen()
+    {
+        pauseButton.gameObject.SetActive(false);
+        restartButtonOver.gameObject.SetActive(true);
+        menuButtonOver.gameObject.SetActive(true);
+        gameOver.gameObject.SetActive(true);
+        recordTitle.gameObject.SetActive(true);
+        record.gameObject.SetActive(true);
     }
 
 

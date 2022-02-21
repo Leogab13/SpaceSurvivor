@@ -2134,10 +2134,6 @@ MonoBehaviour:
   - {fileID: 3816282107766219095, guid: a3086809516e1f84b89b7612694ec210, type: 3}
   explosion: {fileID: 9078237684683626750, guid: 49d1881f386ceb048bfbb9fe8f4e04b4, type: 3}
   speedFactorTest: 0
-  gameOver: {fileID: 798754835}
-  RestartOver: {fileID: 676440120}
-  MenuOver: {fileID: 779077443}
-  Pause: {fileID: 305864124}
 --- !u!4 &888386633
 Transform:
   m_ObjectHideFlags: 0
@@ -3473,6 +3469,9 @@ MonoBehaviour:
   resumeButton: {fileID: 283591581}
   recordTitle: {fileID: 520547031}
   record: {fileID: 97225015}
+  restartButtonOver: {fileID: 676440120}
+  menuButtonOver: {fileID: 779077443}
+  gameOver: {fileID: 798754835}
 --- !u!4 &1961226394
 Transform:
   m_ObjectHideFlags: 0
