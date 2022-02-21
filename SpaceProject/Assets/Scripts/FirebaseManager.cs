@@ -407,9 +407,17 @@ public class FirebaseManager : MonoBehaviour
             //Loop through every users UID
             foreach (DataSnapshot childSnapshot in snapshot.Children)
             {
-                string username = childSnapshot.Child("username").Value.ToString();
+                bool validUsername = childSnapshot.Child("username").Value != null;
+                bool validScore = childSnapshot.Child("score").Value != null;
+                if (validUsername && validScore)
+                {
+                    string username = childSnapshot.Child("username").Value.ToString();
+                    int score = int.Parse(childSnapshot.Child("score").Value.ToString());
+                    leaderboardScores.Add(new Row(username, score));
+                }
+                /*string username = childSnapshot.Child("username").Value.ToString();
                 int score = int.Parse(childSnapshot.Child("score").Value.ToString());
-                leaderboardScores.Add(new Row(username, score));
+                leaderboardScores.Add(new Row(username, score));*/
             }
             leaderboardScores.Sort();
             for (int i = 0; i < leaderboardRows.transform.childCount && i < leaderboardScores.Count; i++)

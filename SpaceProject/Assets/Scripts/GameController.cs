@@ -94,7 +94,6 @@ public class GameController : MonoBehaviour
         if (user != null)
         {
             StartCoroutine(LoadHighScore());
-            Debug.Log(user.UserId.ToString());
         }
         else highScore = 0;
     }
