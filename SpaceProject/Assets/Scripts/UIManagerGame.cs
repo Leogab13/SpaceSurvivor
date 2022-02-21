@@ -71,6 +71,7 @@ public class UIManagerGame : MonoBehaviour
         resumeButton.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         menuButton.gameObject.SetActive(true);
+        record.text = GameController.highScore.ToString();
     }
 
     public void LoadMenu()
